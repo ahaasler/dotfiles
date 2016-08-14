@@ -1,0 +1,4 @@
+[submodule "nano/syntax-highlighting"]
+	path = nano/syntax-highlighting
+	url = https://github.com/scopatz/nanorc.git
+	branch = master
