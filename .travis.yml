@@ -1,2 +1,5 @@
 language: bash
 script: ./script/setup.sh
+env:
+  global:
+  - DOTFILES_HOME="$TRAVIS_BUILD_DIR"
