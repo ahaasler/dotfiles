@@ -10,6 +10,7 @@ set softwrap
 set tabsize 4
 
 include ~/.nano/apacheconf.nanorc
+include ~/.nano/arduino.nanorc
 include ~/.nano/asciidoc.nanorc
 include ~/.nano/asm.nanorc
 include ~/.nano/awk.nanorc
@@ -23,6 +24,7 @@ include ~/.nano/css.nanorc
 include ~/.nano/cython.nanorc
 include ~/.nano/dot.nanorc
 include ~/.nano/email.nanorc
+include ~/.nano/Dockerfile.nanorc
 include ~/.nano/fish.nanorc
 include ~/.nano/fortran.nanorc
 include ~/.nano/gentoo.nanorc
@@ -32,6 +34,7 @@ include ~/.nano/glsl.nanorc
 include ~/.nano/go.nanorc
 include ~/.nano/groff.nanorc
 include ~/.nano/haml.nanorc
+include ~/.nano/haskell.nanorc
 include ~/.nano/html.nanorc
 include ~/.nano/ini.nanorc
 include ~/.nano/inputrc.nanorc
@@ -51,9 +54,11 @@ include ~/.nano/mpdconf.nanorc
 include ~/.nano/mutt.nanorc
 include ~/.nano/nanorc.nanorc
 include ~/.nano/nginx.nanorc
+include ~/.nano/ocaml.nanorc
 include ~/.nano/patch.nanorc
 include ~/.nano/peg.nanorc
 include ~/.nano/perl.nanorc
+include ~/.nano/perl6.nanorc
 include ~/.nano/php.nanorc
 include ~/.nano/pkg-config.nanorc
 include ~/.nano/pkgbuild.nanorc
@@ -64,10 +69,13 @@ include ~/.nano/python.nanorc
 include ~/.nano/reST.nanorc
 include ~/.nano/rpmspec.nanorc
 include ~/.nano/ruby.nanorc
+include ~/.nano/rust.nanorc
 include ~/.nano/scala.nanorc
 include ~/.nano/sed.nanorc
 include ~/.nano/sh.nanorc
+include ~/.nano/sls.nanorc
 include ~/.nano/sql.nanorc
+include ~/.nano/swift.nanorc
 include ~/.nano/systemd.nanorc
 include ~/.nano/tcl.nanorc
 include ~/.nano/tex.nanorc
@@ -78,3 +86,4 @@ include ~/.nano/xresources.nanorc
 include ~/.nano/yaml.nanorc
 include ~/.nano/yum.nanorc
 include ~/.nano/zsh.nanorc
+include ~/.nano/zshrc.nanorc
