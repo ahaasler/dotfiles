@@ -1,0 +1,13 @@
+[user]
+    name = Adrian Haasler García
+    email = dev@adrianhaasler.com
+[core]
+    editor = vim
+    whitespace = off
+    excludesfile = ~/.gitignore
+[advice]
+    statusuoption = false
+[color]
+    ui = true
+[push]
+    default = current
