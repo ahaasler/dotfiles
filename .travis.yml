@@ -1,5 +1,16 @@
 language: bash
 script: ./script/setup.sh
+before_deploy: tar -zcvf dotfiles-$TRAVIS_BUILD_NUMBER.tar.gz --exclude-vcs --exclude=dotfiles-$TRAVIS_BUILD_NUMBER.tar.gz -C $DOTFILES_HOME/.. $(basename $DOTFILES_HOME) --transform "s/$(basename $DOTFILES_HOME)/.dotfiles/"
 env:
   global:
   - DOTFILES_HOME="$TRAVIS_BUILD_DIR"
+deploy:
+  provider: releases
+  api_key:
+    secure: NjUCS8qkaUj0EaCKUMNnYjU0HMpz1LMg9HG3nXbkhgQxOgYz9LzVMnCGvjq4kf1i5AvGz9xFwTfMon8pREQkY6X1XyrvVCfM2vxz7y3A3Fy9YKlWh2NsbekTDDrnVsriAWguFqotamfuZzoTTweqWqcwMCBdOom+4yj/6Cq8k3MhXIohBfGebCFvhJ8B/4Kz/9IyhUlc5dJIGfzCN4ZfpWw6vVB+AgA9QUgp02soMAx76ByNTpBiGzmgS6btEV+hOPEXt4zUBM2qfYI1xitUmY8BrwsHVZf1xIM0q/fWf7fJ4OTW62Oq5e0n1WuB1twx2oozohBp6OZP2efUfPk7Ark2CVuuMungiMoGpOXPFO3jmpf5QfkZGhQ/Hh5kvv0LN0yL1blwc6wmAwmBrY3SJht35hKXVsooU//cBt/hd7Qscc7PXXZFGw0Uk7ag0cbfqXYXJTQzhPP2KVs7vPZg/HrtP7/BspebBdyQZ2wBxRBX08cvdGebJtG1Kk4s45pj98Nv/E7yFCl6oOFFgfTIKP4Q8YBgU+XxlTtegXl5nEug8wPxlIoBCuPq1efUlQDiL9WQf2ZBK7Xb3RNE5ZmnhKy7SxjgqOl1Zd/Q3Ci6v/ajLiVicl9dkTILgOTPidVH1M7A3UNzyklKMieeHbwTNBoBVMf7UFauiYUf2i81r18=
+  skip_cleanup: true
+  file_glob: true
+  file: dotfiles-*.tar.gz
+  on:
+    tags: true
+    repo: ahaasler/dotfiles
