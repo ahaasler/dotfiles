@@ -1,13 +1,29 @@
 [user]
-    name = Adrian Haasler García
-    email = dev@adrianhaasler.com
-[core]
-    editor = vim
-    whitespace = off
-    excludesfile = ~/.gitignore
-[advice]
-    statusuoption = false
+	name = Adrian Haasler García
+	email = dev@adrianhaasler.com
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+[branch]
+	autosetuprebase = always
+[merge]
+	tool = vimdiff
 [color]
-    ui = true
+	ui = true
+[color "status"]
+	untracked = magenta
+	added = cyan
+	changed = yellow
+[help]
+	autocorrect = 1
+[advice]
+	statusuoption = false
 [push]
-    default = current
+	default = current
+[core]
+	editor = vim
+[alias]
+	d = difftool
+	dc = difftool --cached
+	sync = "!f() { git checkout @{-1} && git pull && git checkout - && git rebase @{-1}; }; f"
