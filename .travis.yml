@@ -1,8 +1,16 @@
 language: bash
 script: ./script/setup.sh
+before_install:
+- git config --global user.name "$GIT_USER"
+- git config --global user.email $GIT_EMAIL
+after_success: '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && [ "${TRAVIS_BRANCH}" = "master" ] && ./script/travis/tag.sh || false'
 before_deploy: tar -zcvf dotfiles-$TRAVIS_BUILD_NUMBER.tar.gz --exclude-vcs --exclude=dotfiles-$TRAVIS_BUILD_NUMBER.tar.gz -C $DOTFILES_HOME/.. $(basename $DOTFILES_HOME) --transform "s/$(basename $DOTFILES_HOME)/.dotfiles/"
 env:
   global:
+  - secure: HaLg9vOzSsi97WRn9QtN74NFrhWHF5rf/Jz/VhITAqCjtyPshcaVVzO8kpX3xSnv+jcC6/+EqoJlnMTwEQ25E6ib6e1JUYbBbj0pzKhBm3fCJgHBmrqHnmfc+Zu66TvfILovJHOIKWIydtp+oKboxtpFR4qYFQwKPMnGX54YYhXFLVi01+ooL9SHZWXW/aKtnBbsA8WCUapN4bteCUlag0NUMU+YLvO3QxIlaFqbqXTJ3iZ2/kPJQvnTaLuhhEMTjsGp4QakI1RAdJlbVzKVOYncnutkQLRwx27bgnM1t378gyKJ2JX0eam9R+kJJhW6VSIUGGRx5yF+JVkTPX3+X/xG9ew+tu4xqaz354hOARsGeLgiMpMKSZL1BdUS+lS0mcMkbnob7ENP8eR3ln41UCSlsW6PoUdZYecuad0cRSEqtTVsDYEAvshFAER4csF/z+1ULiQf/RjnC/aTuYhCGDHntIE0GY0CAwf6HCOi+eylbX0bseKRkT2Z9Gs6CyzdeChQkLKzW+mdZ4fIVeopmakzYI7HTYPvs7l8PSEp9nnCxlAUkArq8QOM5//WRlYG6R2dWwkXFnj+lsG4/2V6wjBwhcDyjWYnoON3/hxnz7TF8vQnNUMFvvKd2lTProMGMnihvZLPwsSBw6K6cCEbFsG6M802ZS8duPPZSQwn1bg=
+  - GIT_USER='Adrian Haasler García'
+  - GIT_EMAIL=dev@adrianhaasler.com
+  - GIT_REPO=github.com/ahaasler/dotfiles
   - DOTFILES_HOME="$TRAVIS_BUILD_DIR"
 deploy:
   provider: releases
