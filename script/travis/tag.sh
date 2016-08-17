@@ -11,7 +11,7 @@ if [ "${TRAVIS}" != "true" ]; then
 	return 1
 fi
 
-DESC=`echo $(git log -1 --pretty=%B)`
+DESC=`git log -1 --pretty=%B`
 DATE=`date +%Y%m%d`
 TAG=$DATE
 i=1
