@@ -115,11 +115,12 @@ link_file () {
 # Modifications: Adrian Haasler <dev@adrianhaasler.com>
 # - Use empty file ended in .symlink to copy file with same name but without that ending
 # - Don't add dot by default in dst filename
+# - Make .git restriction in find command more precise (only .git folder)
 # License: MIT (licenses/holman-dotfiles.md) and MIT (LICENSE) for modifications
 install_dotfiles () {
 	info 'installing dotfiles'
 	local overwrite_all=false backup_all=false skip_all=false
-	for file in $(find -H "$DOTFILES_HOME" -maxdepth 2 -name '*.symlink' -not -path '*.git*')
+	for file in $(find -H "$DOTFILES_HOME" -maxdepth 2 -name '*.symlink' -not -path '*/.git.symlink' -not -path '*/.git/**')
 	do
 		src="${file%.*}"
 		dst="$HOME/$(basename "$src")"
