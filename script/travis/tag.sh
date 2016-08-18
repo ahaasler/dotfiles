@@ -18,7 +18,7 @@ i=1
 
 while tag_exists $TAG; do
 	i=$((i + 1))
-	TAG="$DATE.$(echo {A..Z} | sed 's/ //g' | head -c $i | tail -c 1)"
+	TAG="$DATE-$(echo {A..Z} | sed 's/ //g' | head -c $i | tail -c 1)"
 done
 
 echo "Creating tag $TAG with message '$DESC'"
