@@ -23,6 +23,7 @@
 	default = current
 [core]
 	editor = vim
+	excludesfile = ~/.gitignore
 [alias]
 	d = difftool
 	dc = difftool --cached
