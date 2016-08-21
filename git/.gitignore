@@ -1,3 +1,15 @@
 # Cloud9 IDE - http://c9.io
 .c9revisions
 .c9
+
+# Vim
+## swap
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+## session
+Session.vim
+## temporary
+.netrwhist
+*~
+## auto-generated tag files
+tags
