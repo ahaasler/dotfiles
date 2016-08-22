@@ -2,3 +2,7 @@
 	path = nano/syntax-highlighting
 	url = https://github.com/scopatz/nanorc.git
 	branch = master
+[submodule "vim/pathogen"]
+	path = vim/pathogen
+	url = https://github.com/tpope/vim-pathogen.git
+	branch = master
