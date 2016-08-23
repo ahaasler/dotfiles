@@ -6,3 +6,7 @@
 	path = vim/pathogen
 	url = https://github.com/tpope/vim-pathogen.git
 	branch = master
+[submodule "vim/.vim/bundle/molokai"]
+	path = vim/.vim/bundle/molokai
+	url = https://github.com/tomasr/molokai.git
+	branch = master
