@@ -158,3 +158,6 @@ if [ ! -d "$DOTFILES_HOME" ]; then
 fi
 
 install_dotfiles "$@"
+
+# Refresh fonts
+fc-cache -f -v
