@@ -6,6 +6,10 @@ if [ -z "$DOTFILES_HOME" ]; then
 	export DOTFILES_HOME="$HOME/.dotfiles"
 fi
 
+if [ -f ~/.exportrc ]; then
+	. ~/.exportrc
+fi
+
 if [ -f ~/.aliasrc ]; then
 	. ~/.aliasrc
 fi

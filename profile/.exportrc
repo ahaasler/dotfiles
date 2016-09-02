@@ -1,0 +1,4 @@
+for file in $(find -H "$DOTFILES_HOME" -maxdepth 2 -name 'export.sh' -not -path '*/.git/**')
+do
+	source $file
+done
