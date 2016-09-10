@@ -22,3 +22,6 @@ deploy:
   on:
     tags: true
     repo: ahaasler/dotfiles
+notifications:
+  email:
+    on_success: never
