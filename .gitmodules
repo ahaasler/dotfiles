@@ -34,3 +34,7 @@
 	path = zsh/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions.git
 	branch = master
+[submodule "shell/powerline"]
+	path = shell/powerline
+	url = https://github.com/powerline/powerline.git
+	branch = master
