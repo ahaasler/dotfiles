@@ -161,7 +161,7 @@ install_dotfiles "$@"
 
 # Refresh fonts
 info "refreshing fonts"
-if fc-cache -f -v | while read line; do info "$line"; done ; then
+if fc-cache -f -v 2>&1 | while read line; do info "$line"; done ; then
 	success "generated font cache"
 else
 	fail "generation failed"
