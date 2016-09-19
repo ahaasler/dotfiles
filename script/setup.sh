@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set -e
+set -o pipefail
 
 if [ -z "$DOTFILES_HOME" ]; then
 	DOTFILES_HOME="$HOME/.dotfiles"
@@ -160,9 +161,13 @@ fi
 install_dotfiles "$@"
 
 # Refresh fonts
-info "refreshing fonts"
-if fc-cache -f -v 2>&1 | while read line; do info "$line"; done ; then
-	success "generated font cache"
+if hash fc-cache 2>/dev/null; then
+	info "refreshing fonts"
+	if fc-cache -f -v 2>&1 | while read line; do info "$line"; done ; then
+		success "generated font cache"
+	else
+		fail "font generation failed"
+	fi
 else
-	fail "generation failed"
+	info "skipped font refresh because fc-cache is not installed"
 fi
