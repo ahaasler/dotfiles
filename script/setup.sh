@@ -3,9 +3,19 @@
 set -e
 set -o pipefail
 
+# Variables
+
+debug=false
+
 if [ -z "$DOTFILES_HOME" ]; then
 	DOTFILES_HOME="$HOME/.dotfiles"
 fi
+
+# Functions
+
+debug () {
+	if $debug; then printf "\r  [\033[0;35mDEBG\033[0m] $1\n"; fi
+}
 
 # Author: Zach Holman <zach@zachholman.com>
 # License: MIT (licenses/holman-dotfiles.md)
@@ -23,6 +33,10 @@ user () {
 # License: MIT (licenses/holman-dotfiles.md)
 success () {
 	printf "\r\033[2K  [ \033[00;32mOK\033[0m ] $1\n"
+}
+
+warn () {
+	printf "\r  [\033[0;33mWARN\033[0m] $1\n"
 }
 
 # Author: Zach Holman <zach@zachholman.com>
@@ -137,12 +151,8 @@ install_dotfiles () {
 				info "using non-interactive setup with 'Skip all' option for existing files"
 				skip_all=true
 				;;
-			\?)
-				info "unknown option: -$OPTARG"
-				;;
-			:)
-				fail "-$OPTARG requires an argument"
-				;;
+			\?) warn "unknown option: -$OPTARG" ;;
+			:) fail "-$OPTARG requires an argument" ;;
 		esac
 	done
 
@@ -154,6 +164,16 @@ install_dotfiles () {
 	done
 }
 
+# Execution
+
+while getopts ":dv" opt; do
+	case $opt in
+		v|d) debug=true ;;
+		\?) warn "unknown option: -$OPTARG" ;;
+		:) fail "-$OPTARG requires an argument" ;;
+	esac
+done
+
 if [ ! -d "$DOTFILES_HOME" ]; then
 	fail "$DOTFILES_HOME doesn't exist"
 fi
@@ -163,10 +183,10 @@ install_dotfiles "$@"
 # Refresh fonts
 if hash fc-cache 2>/dev/null; then
 	info "refreshing fonts"
-	if fc-cache -f -v 2>&1 | while read line; do info "$line"; done ; then
+	if fc-cache -f -v 2>&1 | while read line; do debug "$line"; done ; then
 		success "generated font cache"
 	else
-		fail "font generation failed"
+		warn "font generation failed"
 	fi
 else
 	info "skipped font refresh because fc-cache is not installed"
