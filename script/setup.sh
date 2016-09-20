@@ -162,6 +162,14 @@ install_dotfiles () {
 		dst="$HOME/$(basename "$src")"
 		link_file "$src" "$dst"
 	done
+
+install_powerline() {
+	info 'installing powerline'
+	if ( cd $DOTFILES_HOME/shell/powerline && python setup.py install --user ) 2>&1 | while read line; do debug "$line"; done ; then
+		success "installed powerline"
+	else
+		warn "powerline installation failed"
+	fi
 }
 
 # Execution
@@ -179,6 +187,7 @@ if [ ! -d "$DOTFILES_HOME" ]; then
 fi
 
 install_dotfiles "$@"
+install_powerline "$@"
 
 # Refresh fonts
 if hash fc-cache 2>/dev/null; then
