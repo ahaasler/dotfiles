@@ -162,6 +162,7 @@ install_dotfiles () {
 		dst="$HOME/$(basename "$src")"
 		link_file "$src" "$dst"
 	done
+}
 
 install_powerline() {
 	info 'installing powerline'
