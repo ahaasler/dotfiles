@@ -14,6 +14,10 @@ if [ -f ~/.aliasrc ]; then
 	. ~/.aliasrc
 fi
 
+if hash powerline-daemon 2>/dev/null; then
+	powerline-daemon -q
+fi
+
 if [ -n "$BASH_VERSION" ]; then
 	if [ -f "$HOME/.bashrc" ]; then
 		. "$HOME/.bashrc"
