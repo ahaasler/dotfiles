@@ -6,6 +6,9 @@ set -o pipefail
 # Variables
 
 debug=false
+overwrite_all=false
+backup_all=false
+skip_all=false
 
 if [ -z "$DOTFILES_HOME" ]; then
 	DOTFILES_HOME="$HOME/.dotfiles"
@@ -131,31 +134,10 @@ link_file () {
 # - Use empty file ended in .symlink to copy file with same name but without that ending
 # - Don't add dot by default in dst filename
 # - Make .git restriction in find command more precise (only .git folder)
-# - Add non interactive arguments
+# - Move 'overwrite_all', 'backup_all' and 'skip_all' outside function
 # License: MIT (licenses/holman-dotfiles.md) and MIT (LICENSE) for modifications
 install_dotfiles () {
 	info 'installing dotfiles'
-	local overwrite_all=false backup_all=false skip_all=false
-
-	while getopts ":OBS" opt; do
-		case $opt in
-			O)
-				info "using non-interactive setup with 'Override all' option for existing files"
-				overwrite_all=true
-				;;
-			B)
-				info "using non-interactive setup with 'Backup all' option for existing files"
-				backup_all=true
-				;;
-			S)
-				info "using non-interactive setup with 'Skip all' option for existing files"
-				skip_all=true
-				;;
-			\?) warn "unknown option: -$OPTARG" ;;
-			:) fail "-$OPTARG requires an argument" ;;
-		esac
-	done
-
 	for file in $(find -H "$DOTFILES_HOME" -maxdepth 2 -name '*.symlink' -not -path '*/.git.symlink' -not -path '*/.git/**')
 	do
 		src="${file%.*}"
@@ -182,9 +164,21 @@ install_powerline() {
 
 # Execution
 
-while getopts ":dv" opt; do
+while getopts ":dvOBS" opt; do
 	case $opt in
 		v|d) debug=true ;;
+		O)
+			info "using non-interactive setup with 'Override all' option for existing files"
+			overwrite_all=true
+			;;
+		B)
+			info "using non-interactive setup with 'Backup all' option for existing files"
+			backup_all=true
+			;;
+		S)
+			info "using non-interactive setup with 'Skip all' option for existing files"
+			skip_all=true
+			;;
 		\?) warn "unknown option: -$OPTARG" ;;
 		:) fail "-$OPTARG requires an argument" ;;
 	esac
