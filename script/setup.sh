@@ -202,3 +202,7 @@ if hash fc-cache 2>/dev/null; then
 else
 	info "skipped font refresh because fc-cache is not installed"
 fi
+
+# Source profile
+info "sourcing profile"
+source ~/.profile
