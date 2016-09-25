@@ -52,6 +52,43 @@ fail () {
 	exit 1
 }
 
+# Author: Charles Duffy (http://stackoverflow.com/a/29310477)
+# License: cc by-sa 3.0 (licenses/cc-by-sa-3.0.txt)
+expandPath() {
+	local path
+	local -a pathElements resultPathElements
+	IFS=':' read -r -a pathElements <<<"$1"
+	: "${pathElements[@]}"
+	for path in "${pathElements[@]}"; do
+		: "$path"
+		case $path in
+			"~+"/*)
+				path=$PWD/${path#"~+/"}
+				;;
+			"~-"/*)
+				path=$OLDPWD/${path#"~-/"}
+				;;
+			"~"/*)
+				path=$HOME/${path#"~/"}
+				;;
+			"~"*)
+				username=${path%%/*}
+				username=${username#"~"}
+				IFS=: read _ _ _ _ _ homedir _ < <(getent passwd "$username")
+				if [[ $path = */* ]]; then
+					path=${homedir}/${path#*/}
+				else
+					path=$homedir
+				fi
+				;;
+		esac
+		resultPathElements+=( "$path" )
+	done
+	local result
+	printf -v result '%s:' "${resultPathElements[@]}"
+	printf '%s\n' "${result%:}"
+}
+
 # Author: Zach Holman <zach@zachholman.com>
 # License: MIT (licenses/holman-dotfiles.md)
 link_file () {
@@ -135,6 +172,7 @@ link_file () {
 # - Don't add dot by default in dst filename
 # - Make .git restriction in find command more precise (only .git folder)
 # - Move 'overwrite_all', 'backup_all' and 'skip_all' outside function
+# - Use file ended in .customlink to copy file with same name (without that ending) to the location defined inside the link file)
 # License: MIT (licenses/holman-dotfiles.md) and MIT (LICENSE) for modifications
 install_dotfiles () {
 	info 'installing dotfiles'
@@ -142,6 +180,14 @@ install_dotfiles () {
 	do
 		src="${file%.*}"
 		dst="$HOME/$(basename "$src")"
+		link_file "$src" "$dst"
+	done
+
+	for file in $(find -H "$DOTFILES_HOME" -maxdepth 2 -name '*.customlink' -not -path '*/.git.customlink' -not -path '*/.git/**')
+	do
+		src="${file%.*}"
+		dst="$(expandPath $(head -n 1 $file))"
+		mkdir -p $(dirname $dst)
 		link_file "$src" "$dst"
 	done
 }
