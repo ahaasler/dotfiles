@@ -249,6 +249,5 @@ else
 	info "skipped font refresh because fc-cache is not installed"
 fi
 
-# Source profile
-info "sourcing profile"
-source ~/.profile
+# Warn about changes
+warn "to see all changes logout and login again"
