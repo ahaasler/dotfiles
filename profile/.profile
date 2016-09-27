@@ -10,6 +10,10 @@ if [ -f ~/.exportrc ]; then
 	. ~/.exportrc
 fi
 
+if [ -f ~/.functionrc ]; then
+	. ~/.functionrc
+fi
+
 if [ -f ~/.aliasrc ]; then
 	. ~/.aliasrc
 fi
