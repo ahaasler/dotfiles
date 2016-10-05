@@ -1,3 +1,8 @@
+# Start tmux if conditions are met
+emulate sh
+source $DOTFILES_HOME/tmux/start.sh
+emulate zsh
+
 # Powerline
 if [[ -r $DOTFILES_HOME/shell/powerline/powerline/bindings/zsh/powerline.zsh ]]; then
 	source $DOTFILES_HOME/shell/powerline/powerline/bindings/zsh/powerline.zsh
