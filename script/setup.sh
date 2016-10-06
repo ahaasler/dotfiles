@@ -234,6 +234,9 @@ if [ ! -d "$DOTFILES_HOME" ]; then
 	fail "$DOTFILES_HOME doesn't exist"
 fi
 
+# Create fixed location link for dotfiles home
+ln -sfn $DOTFILES_HOME ~/.dotfiles.home
+
 install_dotfiles "$@"
 install_powerline "$@"
 
