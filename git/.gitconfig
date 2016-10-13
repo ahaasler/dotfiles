@@ -16,6 +16,8 @@
 	added = cyan
 	changed = yellow
 [status]
+	branch = true
+	short = true
 	showuntrackedfiles = all
 [help]
 	autocorrect = 1
