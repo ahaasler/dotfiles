@@ -8,6 +8,9 @@
 # Start tmux if conditions are met
 source $DOTFILES_HOME/tmux/start.sh
 
+# Use leftonly theme for powerline
+export POWERLINE_CONFIG_OVERRIDES=ext.shell.theme=default_leftonly
+
 alias ls='ls --color=auto'
 PS1='[\u@\h \W]\$ '
 
