@@ -10,6 +10,10 @@ if [[ -r $DOTFILES_HOME/shell/powerline/powerline/bindings/zsh/powerline.zsh ]];
 	source $DOTFILES_HOME/shell/powerline/powerline/bindings/zsh/powerline.zsh
 fi
 
+# Enable completion
+autoload -U compinit
+compinit
+#
 # History
 export HISTSIZE=20000
 export HISTFILE="$HOME/.zhistory"
