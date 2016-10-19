@@ -176,14 +176,14 @@ link_file () {
 # License: MIT (licenses/holman-dotfiles.md) and MIT (LICENSE) for modifications
 install_dotfiles () {
 	info 'installing dotfiles'
-	for file in $(find -H "$DOTFILES_HOME" -maxdepth 2 -name '*.symlink' -not -path '*/.git.symlink' -not -path '*/.git/**')
+	for file in $(find -H "$DOTFILES_HOME" -maxdepth 2 -name '*.symlink' -not -path '*/.git.symlink' -not -path '*/.git/**' -not -path "$DOTFILES_HOME/if/**")
 	do
 		src="${file%.*}"
 		dst="$HOME/$(basename "$src")"
 		link_file "$src" "$dst"
 	done
 
-	for file in $(find -H "$DOTFILES_HOME" -maxdepth 2 -name '*.customlink' -not -path '*/.git.customlink' -not -path '*/.git/**')
+	for file in $(find -H "$DOTFILES_HOME" -maxdepth 2 -name '*.customlink' -not -path '*/.git.customlink' -not -path '*/.git/**' -not -path "$DOTFILES_HOME/if/**")
 	do
 		src="${file%.*}"
 		dst="$(expandPath $(head -n 1 $file))"
