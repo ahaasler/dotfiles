@@ -1,4 +1,1 @@
-for file in $(find -H "$DOTFILES_HOME" -maxdepth 2 -name '*function.sh' -not -path '*/.git/**' -not -path "$DOTFILES_HOME/if/**")
-do
-	source $file
-done
+source_dotfiles_pattern '*function.sh'
