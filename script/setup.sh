@@ -92,7 +92,7 @@ expandPath() {
 # Author: Zach Holman <zach@zachholman.com>
 # License: MIT (licenses/holman-dotfiles.md)
 link_file () {
-	local src=$1 dst=$2
+	local src=$1 dst=$2 prepend=$3
 
 	local overwrite= backup= skip=
 	local action=
@@ -143,13 +143,13 @@ link_file () {
 
 		if [ "$overwrite" == "true" ]
 		then
-			rm -rf "$dst"
+			$prepend rm -rf "$dst"
 			success "removed $dst"
 		fi
 
 		if [ "$backup" == "true" ]
 		then
-			mv "$dst" "${dst}.backup"
+			$prepend mv "$dst" "${dst}.backup"
 			success "moved $dst to ${dst}.backup"
 		fi
 
@@ -161,7 +161,7 @@ link_file () {
 
 	if [ "$skip" != "true" ]	# "false" or empty
 	then
-		ln -s "$1" "$2"
+		$prepend ln -s "$1" "$2"
 		success "linked $1 to $2"
 	fi
 }
@@ -189,6 +189,15 @@ install_dotfiles () {
 		dst="$(expandPath $(head -n 1 $file))"
 		mkdir -p $(dirname $dst)
 		link_file "$src" "$dst"
+	done
+
+	for file in $(find -H "$DOTFILES_HOME" -maxdepth 2 -name '*.rootlink' -not -path '*/.git.rootlink' -not -path '*/.git/**' -not -path "$DOTFILES_HOME/if/**")
+	do
+		src="${file%.*}"
+		dst="$(expandPath $(head -n 1 $file))"
+		mkdir -p $(dirname $dst)
+		info "root necessary to setup $dst"
+		link_file "$src" "$dst" "sudo"
 	done
 }
 
