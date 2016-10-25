@@ -173,6 +173,7 @@ link_file () {
 # - Make .git restriction in find command more precise (only .git folder)
 # - Move 'overwrite_all', 'backup_all' and 'skip_all' outside function
 # - Use file ended in .customlink to copy file with same name (without that ending) to the location defined inside the link file)
+# - Use file ended in .rootlink to copy as root the file with same name (without that ending) to the location defined inside the link file)
 # License: MIT (licenses/holman-dotfiles.md) and MIT (LICENSE) for modifications
 install_dotfiles () {
 	info 'installing dotfiles'
