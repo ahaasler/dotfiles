@@ -29,6 +29,7 @@
 	editor = vim
 	excludesfile = ~/.gitignore
 [alias]
+	cp = cherry-pick
 	d = difftool
 	dc = difftool --cached
 	sync = "!f() { git checkout @{-1} && git pull && git checkout - && git rebase @{-1}; }; f"
