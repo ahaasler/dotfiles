@@ -3,6 +3,16 @@
 set -e
 set -o pipefail
 
+# Variables
+
+debug=false
+
+# Functions
+
+debug () {
+	if $debug; then printf "\r  [\033[0;35mDEBG\033[0m] $1\n"; fi
+}
+
 # Author: Zach Holman <zach@zachholman.com>
 # License: MIT (licenses/holman-dotfiles.md)
 info () {
