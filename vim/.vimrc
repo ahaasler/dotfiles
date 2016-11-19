@@ -10,3 +10,4 @@ set relativenumber
 let g:gitgutter_highlight_lines = 1
 autocmd FileType gitcommit call setpos('.', [0, 1, 1, 0]) | startinsert
 nmap <C-n> :set invrelativenumber<CR>
+command Gllc :.!git log -1 --pretty=\%B
