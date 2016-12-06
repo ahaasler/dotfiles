@@ -13,7 +13,7 @@ fi
 # Enable completion
 autoload -U compinit
 compinit
-#
+
 # History
 export HISTSIZE=20000
 export HISTFILE="$HOME/.zhistory"
