@@ -22,10 +22,6 @@
 	path = zsh/zsh-completions
 	url = https://github.com/zsh-users/zsh-completions.git
 	branch = master
-[submodule "zsh/zsh-autosuggestions"]
-	path = zsh/zsh-autosuggestions
-	url = https://github.com/zsh-users/zsh-autosuggestions.git
-	branch = master
 [submodule "shell/powerline"]
 	path = shell/powerline
 	url = https://github.com/powerline/powerline.git
