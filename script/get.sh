@@ -3,6 +3,8 @@
 set -e
 set -o pipefail
 
+args="$@"
+
 # Variables
 
 debug=false
@@ -63,4 +65,4 @@ fi
 
 success "downloaded dotfiles"
 
-$DOTFILES_HOME/script/setup.sh
+$DOTFILES_HOME/script/setup.sh "$args"
