@@ -186,8 +186,7 @@ install_powerline() {
 }
 
 # Execution
-
-while getopts ":dvOBS" opt; do
+while getopts ":dvh:OBS" opt; do
 	case $opt in
 		v|d) debug=true ;;
 		O)

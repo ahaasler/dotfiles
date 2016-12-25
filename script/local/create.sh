@@ -12,7 +12,7 @@ home="$(cd "$(dirname $(dirname $(dirname "$BASH_SOURCE" )))" && pwd)"
 # Functions
 source "$home/script/function/log.sh"
 
-while getopts ":vd" opt; do
+while getopts ":vdh:" opt; do
 	case $opt in
 		v|d) debug=true ;;
 		:) fail "-$OPTARG requires an argument" ;;
