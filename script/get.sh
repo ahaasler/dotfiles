@@ -8,15 +8,17 @@ args="$@"
 # Variables
 
 debug=false
+git=false
 
 # Functions
 source <(curl -skL https://raw.githubusercontent.com/ahaasler/dotfiles/master/script/function/log.sh)
 
 home="$HOME/.dotfiles"
 
-while getopts ":vdh:" opt; do
+while getopts ":vdgh:" opt; do
 	case $opt in
 		v|d) debug=true ;;
+		g) git=true ;;
 		h) home=$OPTARG	;;
 		\?) warn "unknown option: -$OPTARG" ;;
 		:) fail "-$OPTARG requires an argument" ;;
@@ -27,7 +29,8 @@ mkdir -p $home
 
 info "installing dotfiles in $home"
 
-if hash git 2>/dev/null; then
+if $git; then
+	hash git 2>/dev/null || { fail >&2 "git is not installed, please install it"; }
 	info "installing with git"
 	rm -rf $home
 	git clone --recursive https://github.com/ahaasler/dotfiles.git $home &>/dev/null
