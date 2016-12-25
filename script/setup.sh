@@ -3,8 +3,9 @@
 set -e
 set -o pipefail
 
-# Variables
+args="$@"
 
+# Variables
 debug=false
 overwrite_all=false
 backup_all=false
@@ -213,8 +214,8 @@ fi
 # Create fixed location link for dotfiles home
 ln -sfn $DOTFILES_HOME ~/.dotfiles.home
 
-install_dotfiles "$@"
-install_powerline "$@"
+install_dotfiles $args
+install_powerline $args
 
 # Refresh fonts
 if hash fc-cache 2>/dev/null; then

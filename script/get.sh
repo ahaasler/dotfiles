@@ -41,4 +41,4 @@ fi
 
 success "downloaded dotfiles"
 
-$home/script/install.sh "$args"
+$home/script/install.sh $args

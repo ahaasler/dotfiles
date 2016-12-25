@@ -14,4 +14,4 @@ source $home/script/local/create.sh
 source $HOME/.dotfiles.local
 
 # Setup
-$home/script/setup.sh "$args"
+$home/script/setup.sh $args
