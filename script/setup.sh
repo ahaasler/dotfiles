@@ -201,7 +201,6 @@ while getopts ":dvh:OBS" opt; do
 			info "using non-interactive setup with 'Skip all' option for existing files"
 			skip_all=true
 			;;
-		\?) warn "unknown option: -$OPTARG" ;;
 		:) fail "-$OPTARG requires an argument" ;;
 	esac
 done

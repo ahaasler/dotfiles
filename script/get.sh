@@ -20,7 +20,6 @@ while getopts ":vdgh:" opt; do
 		v|d) debug=true ;;
 		g) git=true ;;
 		h) home=$OPTARG	;;
-		\?) warn "unknown option: -$OPTARG" ;;
 		:) fail "-$OPTARG requires an argument" ;;
 	esac
 done
