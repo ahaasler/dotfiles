@@ -30,3 +30,7 @@
 	path = fonts/source-code-pro
 	url = https://github.com/adobe-fonts/source-code-pro
 	branch = release
+[submodule "if/distro/arch/aur/aurget"]
+	path = if/distro/arch/aur/aurget
+	url = https://github.com/pbrisbin/aurget
+	branch = master
