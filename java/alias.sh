@@ -1,0 +1,1 @@
+alias javav='java -version'
