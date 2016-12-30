@@ -142,17 +142,19 @@ link_file () {
 # - Use file ended in .customlink to copy file with same name (without that ending) to the location defined inside the link file)
 # - Use file ended in .rootlink to copy as root the file with same name (without that ending) to the location defined inside the link file)
 # - Exclude if folder
+# - Make base folder for search customizable
 # License: MIT (licenses/holman-dotfiles.md) and MIT (LICENSE) for modifications
 install_dotfiles () {
-	info 'installing dotfiles'
-	for file in $(find -H "$DOTFILES_HOME" -maxdepth 2 -name '*.symlink' -not -path '*/.git.symlink' -not -path '*/.git/**' -not -path "$DOTFILES_HOME/if/**")
+	base_folder=$1
+	info "installing dotfiles in $base_folder"
+	for file in $(find -H "$base_folder" -maxdepth 2 -name '*.symlink' -not -path '*/.git.symlink' -not -path '*/.git/**' -not -path "$base_folder/if/**")
 	do
 		src="${file%.*}"
 		dst="$HOME/$(basename "$src")"
 		link_file "$src" "$dst"
 	done
 
-	for file in $(find -H "$DOTFILES_HOME" -maxdepth 2 -name '*.customlink' -not -path '*/.git.customlink' -not -path '*/.git/**' -not -path "$DOTFILES_HOME/if/**")
+	for file in $(find -H "$base_folder" -maxdepth 2 -name '*.customlink' -not -path '*/.git.customlink' -not -path '*/.git/**' -not -path "$base_folder/if/**")
 	do
 		src="${file%.*}"
 		dst="$(expandPath $(head -n 1 $file))"
@@ -160,7 +162,7 @@ install_dotfiles () {
 		link_file "$src" "$dst"
 	done
 
-	for file in $(find -H "$DOTFILES_HOME" -maxdepth 2 -name '*.rootlink' -not -path '*/.git.rootlink' -not -path '*/.git/**' -not -path "$DOTFILES_HOME/if/**")
+	for file in $(find -H "$base_folder" -maxdepth 2 -name '*.rootlink' -not -path '*/.git.rootlink' -not -path '*/.git/**' -not -path "$base_folder/if/**")
 	do
 		src="${file%.*}"
 		dst="$(expandPath $(head -n 1 $file))"
@@ -213,8 +215,8 @@ fi
 # Create fixed location link for dotfiles home
 ln -sfn $DOTFILES_HOME ~/.dotfiles.home
 
-install_dotfiles $args
-install_powerline $args
+install_dotfiles $DOTFILES_HOME
+install_powerline
 
 # Refresh fonts
 if hash fc-cache 2>/dev/null; then
