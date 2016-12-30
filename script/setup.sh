@@ -141,6 +141,7 @@ link_file () {
 # - Move 'overwrite_all', 'backup_all' and 'skip_all' outside function
 # - Use file ended in .customlink to copy file with same name (without that ending) to the location defined inside the link file)
 # - Use file ended in .rootlink to copy as root the file with same name (without that ending) to the location defined inside the link file)
+# - Exclude if folder
 # License: MIT (licenses/holman-dotfiles.md) and MIT (LICENSE) for modifications
 install_dotfiles () {
 	info 'installing dotfiles'
