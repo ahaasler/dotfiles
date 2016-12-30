@@ -147,14 +147,14 @@ link_file () {
 install_dotfiles () {
 	base_folder=$1
 	info "installing dotfiles in $base_folder"
-	for file in $(find -H "$base_folder" -maxdepth 2 -name '*.symlink' -not -path '*/.git.symlink' -not -path '*/.git/**' -not -path "$base_folder/if/**")
+	for file in $(find -H "$base_folder" -maxdepth 3 -name '*.symlink' -not -path '*/.git.symlink' -not -path '*/.git/**' -not -path "$base_folder/if/**")
 	do
 		src="${file%.*}"
 		dst="$HOME/$(basename "$src")"
 		link_file "$src" "$dst"
 	done
 
-	for file in $(find -H "$base_folder" -maxdepth 2 -name '*.customlink' -not -path '*/.git.customlink' -not -path '*/.git/**' -not -path "$base_folder/if/**")
+	for file in $(find -H "$base_folder" -maxdepth 3 -name '*.customlink' -not -path '*/.git.customlink' -not -path '*/.git/**' -not -path "$base_folder/if/**")
 	do
 		src="${file%.*}"
 		dst="$(expandPath $(head -n 1 $file))"
@@ -162,7 +162,7 @@ install_dotfiles () {
 		link_file "$src" "$dst"
 	done
 
-	for file in $(find -H "$base_folder" -maxdepth 2 -name '*.rootlink' -not -path '*/.git.rootlink' -not -path '*/.git/**' -not -path "$base_folder/if/**")
+	for file in $(find -H "$base_folder" -maxdepth 3 -name '*.rootlink' -not -path '*/.git.rootlink' -not -path '*/.git/**' -not -path "$base_folder/if/**")
 	do
 		src="${file%.*}"
 		dst="$(expandPath $(head -n 1 $file))"
