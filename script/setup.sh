@@ -216,6 +216,10 @@ fi
 ln -sfn $DOTFILES_HOME ~/.dotfiles.home
 
 install_dotfiles $DOTFILES_HOME
+# Install distro specific dotfiles
+if [ "$DISTRO" ] && [ -d "$DOTFILES_HOME/if/distro/$DISTRO" ]; then
+	install_dotfiles "$DOTFILES_HOME/if/distro/$DISTRO/"
+fi
 install_powerline
 
 # Refresh fonts
