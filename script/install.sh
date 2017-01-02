@@ -10,7 +10,7 @@ args="$@"
 home="$(cd "$( dirname $(dirname "$BASH_SOURCE" ))" && pwd)"
 
 # Create local configuration and read it
-source $home/script/local/create.sh
+bash $home/script/local/create.sh $args
 source $HOME/.dotfiles.local
 
 # Setup
