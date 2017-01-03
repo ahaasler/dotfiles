@@ -40,4 +40,4 @@ bash $DOTFILES_HOME/script/local/update.sh $args
 source $HOME/.dotfiles.local
 
 # Setup
-$DOTFILES_HOME/script/setup.sh $args
+bash $DOTFILES_HOME/script/setup.sh $args
