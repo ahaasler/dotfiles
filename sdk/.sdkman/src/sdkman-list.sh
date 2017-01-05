@@ -1,0 +1,1 @@
+../../sdkman/src/main/bash/sdkman-list.sh
