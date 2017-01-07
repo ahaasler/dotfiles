@@ -38,7 +38,7 @@ else
 	info "intalling with curl"
 	releaseUrl=$(curl -s https://api.github.com/repos/ahaasler/dotfiles/releases | grep browser_download_url | head -n 1 | cut -d '"' -f 4)
 	info "downloading latest release: $releaseUrl"
-	curl -skL $releaseUrl | tar zx --strip-components 1 -C $home
+	curl -skL $releaseUrl | tar zx --strip-components 1 -C $home --recursive-unlink
 fi
 
 success "downloaded dotfiles"
