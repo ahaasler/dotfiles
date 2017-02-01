@@ -9,6 +9,8 @@
 	autosetuprebase = always
 [merge]
 	tool = vimdiff
+[merge "pommerge"]
+	driver = ~/.dotfiles.home/git/pommerge/mergepom.py %O %A %B
 [color]
 	ui = true
 [color "status"]
