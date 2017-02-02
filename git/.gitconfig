@@ -30,6 +30,7 @@
 [core]
 	editor = vim
 	excludesfile = ~/.gitignore
+	attributesfile = ~/.gitattributes
 [alias]
 	cp = cherry-pick
 	d = difftool
