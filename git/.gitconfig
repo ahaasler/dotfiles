@@ -3,6 +3,8 @@
 	email = dev@adrianhaasler.com
 [diff]
 	tool = vimdiff
+[diff "exif"]
+	textconv = exiftool
 [difftool]
 	prompt = false
 [branch]
