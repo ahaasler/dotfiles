@@ -28,3 +28,5 @@ source $DOTFILES_HOME/zsh/zsh-history-substring-search/zsh-history-substring-sea
 
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
+
+source_dotfiles_pattern '*.zsh'
