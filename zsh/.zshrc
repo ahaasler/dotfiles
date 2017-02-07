@@ -10,6 +10,10 @@ if [[ -r $DOTFILES_HOME/shell/powerline/powerline/bindings/zsh/powerline.zsh ]];
 	source $DOTFILES_HOME/shell/powerline/powerline/bindings/zsh/powerline.zsh
 fi
 
+# Key bindings
+bindkey "^[[1~" beginning-of-line
+bindkey "^[[4~" end-of-line
+
 # Enable completion
 autoload -U compinit
 compinit
