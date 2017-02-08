@@ -13,6 +13,8 @@ fi
 # Key bindings
 bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
+bindkey "^[OC" forward-word
+bindkey "^[OD" backward-word
 
 # Enable completion
 autoload -U compinit
