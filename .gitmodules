@@ -45,3 +45,7 @@
 	path = git/pommerge
 	url = https://github.com/ralfth/pom-merge-driver
 	branch = master
+[submodule "tmux/tmux-resurrect"]
+	path = tmux/tmux-resurrect
+	url = https://github.com/tmux-plugins/tmux-resurrect.git
+	branch = master
