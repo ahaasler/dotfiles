@@ -49,3 +49,7 @@
 	path = tmux/tmux-resurrect
 	url = https://github.com/tmux-plugins/tmux-resurrect.git
 	branch = master
+[submodule "tmux/tmux-continuum"]
+	path = tmux/tmux-continuum
+	url = https://github.com/tmux-plugins/tmux-continuum.git
+	branch = master
