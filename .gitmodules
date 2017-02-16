@@ -53,3 +53,7 @@
 	path = tmux/tmux-continuum
 	url = https://github.com/tmux-plugins/tmux-continuum.git
 	branch = master
+[submodule "shell/powerline-gitstatus"]
+	path = shell/powerline-gitstatus
+	url = https://github.com/jaspernbrouwer/powerline-gitstatus.git
+	branch = master
