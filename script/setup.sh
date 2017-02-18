@@ -188,6 +188,15 @@ install_powerline() {
 	fi
 }
 
+install_powerline_gistatus() {
+	info 'installing powerline-gitstatus'
+	if ( cd $DOTFILES_HOME/shell/powerline-gitstatus && python setup.py install --user ) 2>&1 | while read line; do debug "$line"; done ; then
+		success "installed powerline-gistatus"
+	else
+		warn "powerline-gistatus installation failed"
+	fi
+}
+
 # Execution
 while getopts ":dvh:OBS" opt; do
 	case $opt in
@@ -221,6 +230,7 @@ if [ "$DISTRO" ] && [ -d "$DOTFILES_HOME/if/distro/$DISTRO" ]; then
 	install_dotfiles "$DOTFILES_HOME/if/distro/$DISTRO/"
 fi
 install_powerline
+install_powerline_gistatus
 
 # Refresh fonts
 if hash fc-cache 2>/dev/null; then
