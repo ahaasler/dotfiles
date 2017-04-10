@@ -1,1 +1,6 @@
 source_dotfiles_pattern '*export.sh'
+
+# Source distro specific exports
+if [ "$DISTRO" ] && [ -d "$DOTFILES_HOME/if/distro/$DISTRO" ]; then
+	source_dotfiles_pattern '*export.sh' "if/distro/$DISTRO/"
+fi

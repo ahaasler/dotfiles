@@ -1,1 +1,6 @@
 source_dotfiles_pattern '*alias.sh'
+
+# Source distro specific aliases
+if [ "$DISTRO" ] && [ -d "$DOTFILES_HOME/if/distro/$DISTRO" ]; then
+	source_dotfiles_pattern '*alias.sh' "if/distro/$DISTRO/"
+fi
