@@ -9,3 +9,5 @@ alias fgrep='grep -F'
 alias man='LC_ALL=C LANG=C man'
 alias dus='du -hsc * | sort -h'
 hash colordiff 2>/dev/null && alias diff=colordiff
+alias fd='find . -type d -name'
+alias ff='find . -type f -name'
