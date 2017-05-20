@@ -12,3 +12,4 @@ hash colordiff 2>/dev/null && alias diff=colordiff
 alias fd='find . -type d -name'
 alias ff='find . -type f -name'
 alias mkdir="mkdir -pv"
+alias myip="curl -skL http://ipecho.net/plain; echo"
