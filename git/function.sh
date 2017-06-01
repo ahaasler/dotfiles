@@ -4,3 +4,6 @@ gclcd() {
 gd^() {
 	git diff $1^ $1
 }
+gdt^() {
+	git difftool $1^ $1
+}
