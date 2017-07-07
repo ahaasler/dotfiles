@@ -1,8 +1,8 @@
 alias fucking=sudo
 alias bd='cd $OLDPWD'
 alias ls='ls --color=auto'
-alias ll='ls -lh'
-alias lla='ll -a'
+alias l='ls -lh'
+alias ll='l -a'
 alias grep='grep --color=auto'
 alias egrep='grep -E'
 alias fgrep='grep -F'
