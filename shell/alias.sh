@@ -1,5 +1,10 @@
 alias fucking=sudo
 alias bd='cd $OLDPWD'
+alias .='cd ..'
+alias ..='cd ../..'
+alias ...='cd ../../..'
+alias ....='cd ../../../..'
+alias .....='cd ../../../../..'
 alias ls='ls --color=auto'
 alias l='ls -lh'
 alias ll='l -a'
