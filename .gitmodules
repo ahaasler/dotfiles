@@ -57,3 +57,7 @@
 	path = shell/powerline-gitstatus
 	url = https://github.com/jaspernbrouwer/powerline-gitstatus.git
 	branch = master
+[submodule "gnome/gnome-shell-extension-installer"]
+	path = gnome/gnome-shell-extension-installer
+	url = https://github.com/brunelli/gnome-shell-extension-installer.git
+	branch = master
