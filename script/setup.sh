@@ -18,6 +18,7 @@ fi
 # Functions
 
 source $DOTFILES_HOME/script/function/log.sh
+source $DOTFILES_HOME/script/function/source.sh
 
 # Author: Charles Duffy (http://stackoverflow.com/a/29310477)
 # License: cc by-sa 3.0 (licenses/cc-by-sa-3.0.txt)
@@ -231,6 +232,14 @@ if [ "$DISTRO" ] && [ -d "$DOTFILES_HOME/if/distro/$DISTRO" ]; then
 fi
 install_powerline
 install_powerline_gistatus
+
+# Setup specific parts
+source_dotfiles_pattern '*setup.sh' '' "$DOTFILES_HOME/script/setup.sh"
+
+# Setup distro specific parts
+if [ "$DISTRO" ] && [ -d "$DOTFILES_HOME/if/distro/$DISTRO" ]; then
+	source_dotfiles_pattern '*setup.sh' "if/distro/$DISTRO/"
+fi
 
 # Refresh fonts
 if hash fc-cache 2>/dev/null; then

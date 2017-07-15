@@ -6,14 +6,8 @@ if [ -z "$DOTFILES_HOME" ]; then
 	export DOTFILES_HOME="$HOME/.dotfiles"
 fi
 
-source_dotfiles_pattern() {
-	local folder="$DOTFILES_HOME/$2"
-	local pattern="$1"
-	for file in $(find -H "$folder" -maxdepth 2 -name "$pattern" -not -path '*/.git/**' -not -path "$folder/if/**")
-	do
-		source $file
-	done
-}
+# Load source dotfiles function
+. $DOTFILES_HOME/script/function/source.sh
 
 if [ -f ~/.exportrc ]; then
 	. ~/.exportrc
