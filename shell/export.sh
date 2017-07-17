@@ -1,6 +1,7 @@
 if [ -d "$HOME/bin" ]; then
 	export PATH=$HOME/bin:$PATH
 fi
+export PATH=$HOME/.local/bin:$PATH
 export PATH=$PATH:$DOTFILES_HOME/shell/powerline/scripts
 export TERM=screen-256color
 # On login use ascii
