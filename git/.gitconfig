@@ -38,3 +38,5 @@
 	d = difftool
 	dc = difftool --cached
 	sync = "!f() { git checkout @{-1} && git pull && git checkout - && git rebase @{-1}; }; f"
+[include]
+	path = ~/.gitconfig.local
