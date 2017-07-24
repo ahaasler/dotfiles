@@ -61,3 +61,7 @@
 	path = gnome/gnome-shell-extension-installer
 	url = https://github.com/brunelli/gnome-shell-extension-installer.git
 	branch = master
+[submodule "gnome/extensions/gs-extensions-drop-down-terminal"]
+	path = gnome/extensions/gs-extensions-drop-down-terminal
+	url = https://github.com/zzrough/gs-extensions-drop-down-terminal.git
+	branch = master
