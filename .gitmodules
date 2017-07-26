@@ -69,3 +69,7 @@
 	path = gnome/extensions/bing-wallpaper-gnome-extension
 	url = https://github.com/neffo/bing-wallpaper-gnome-extension.git
 	branch = master
+[submodule "gnome/extensions/gnome-shell-extension-calc"]
+	path = gnome/extensions/gnome-shell-extension-calc
+	url = https://github.com/eonpatapon/gnome-shell-extension-calc.git
+	branch = master
