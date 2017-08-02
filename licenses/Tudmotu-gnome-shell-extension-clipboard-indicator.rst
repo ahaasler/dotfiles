@@ -1,0 +1,1 @@
+../gnome/extensions/gnome-shell-extension-clipboard-indicator/LICENSE.rst
