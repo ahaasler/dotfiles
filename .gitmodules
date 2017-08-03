@@ -81,3 +81,7 @@
 	path = gnome/extensions/gnome-shell-extension-clipboard-indicator
 	url = https://github.com/Tudmotu/gnome-shell-extension-clipboard-indicator.git
 	branch = master
+[submodule "gnome/extensions/gnome-shell-extensions-sustmi"]
+	path = gnome/extensions/gnome-shell-extensions-sustmi
+	url = https://github.com/sustmi/gnome-shell-extensions-sustmi.git
+	branch = master
