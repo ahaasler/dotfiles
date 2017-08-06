@@ -89,3 +89,7 @@
 	path = gnome/extensions/nohotcorner
 	url = https://github.com/HROMANO/nohotcorner.git
 	branch = master
+[submodule "gnome/extensions/GnomeShell_DynamicTopBar"]
+	path = gnome/extensions/GnomeShell_DynamicTopBar
+	url = https://github.com/AMDG2/GnomeShell_DynamicTopBar.git
+	branch = master
