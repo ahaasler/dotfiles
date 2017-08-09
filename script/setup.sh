@@ -230,15 +230,22 @@ install_dotfiles $DOTFILES_HOME
 if [ "$DISTRO" ] && [ -d "$DOTFILES_HOME/if/distro/$DISTRO" ]; then
 	install_dotfiles "$DOTFILES_HOME/if/distro/$DISTRO/"
 fi
+# Install hostname specific dotfiles
+if [ "$(hostname)" ] && [ -d "$DOTFILES_HOME/if/hostname/$(hostname)" ]; then
+	install_dotfiles "$DOTFILES_HOME/if/hostname/$(hostname)/"
+fi
 install_powerline
 install_powerline_gistatus
 
 # Setup specific parts
 source_dotfiles_pattern '*setup.sh' '' "$DOTFILES_HOME/script/setup.sh"
-
 # Setup distro specific parts
 if [ "$DISTRO" ] && [ -d "$DOTFILES_HOME/if/distro/$DISTRO" ]; then
 	source_dotfiles_pattern '*setup.sh' "if/distro/$DISTRO/"
+fi
+# Setup hostname specific parts
+if [ "$(hostname)" ] && [ -d "$DOTFILES_HOME/if/hostname/$(hostname)" ]; then
+	source_dotfiles_pattern '*setup.sh' "if/hostname/$(hostname)/"
 fi
 
 # Refresh fonts
