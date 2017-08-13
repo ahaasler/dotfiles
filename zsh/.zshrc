@@ -30,6 +30,8 @@ setopt ALL_EXPORT
 setopt HIST_IGNORE_DUPS
 # Report the status of background jobs immediately
 setopt NOTIFY
+# Lets files beginning with a . be matched without explicitly specifying the dot
+setopt GLOB_DOTS
 # Turns on spelling correction for commands and for all arguments
 setopt CORRECT_ALL
 
