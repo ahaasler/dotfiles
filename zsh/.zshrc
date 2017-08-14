@@ -34,6 +34,8 @@ setopt NOTIFY
 setopt GLOB_DOTS
 # Turns on spelling correction for commands and for all arguments
 setopt CORRECT_ALL
+# Don't close background jobs on exit
+setopt NO_HUP
 
 fpath=($DOTFILES_HOME/zsh/zsh-completions/src $fpath)
 source $DOTFILES_HOME/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
