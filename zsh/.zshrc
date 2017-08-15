@@ -36,6 +36,8 @@ setopt GLOB_DOTS
 setopt CORRECT_ALL
 # Don't close background jobs on exit
 setopt NO_HUP
+# On an ambiguous completion, instead of listing possibilities or beeping, insert the first match immediately.
+setopt MENU_COMPLETE
 
 fpath=($DOTFILES_HOME/zsh/zsh-completions/src $fpath)
 source $DOTFILES_HOME/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
