@@ -49,3 +49,11 @@ bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
 source_dotfiles_pattern '*.zsh'
+# Source distro specific zsh config
+if [ "$DISTRO" ] && [ -d "$DOTFILES_HOME/if/distro/$DISTRO" ]; then
+	source_dotfiles_pattern '*.zsh' "if/distro/$DISTRO/"
+fi
+# Source distro specific zsh config
+if [ "$(hostname)" ] && [ -d "$DOTFILES_HOME/if/hostname/$(hostname)" ]; then
+	source_dotfiles_pattern '*.zsh' "if/hostname/$(hostname)/"
+fi
