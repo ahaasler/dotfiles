@@ -7,6 +7,8 @@ set spell spelllang=en_us
 colorscheme molokai
 set number
 set relativenumber
+set ignorecase
+set smartcase
 let g:gitgutter_highlight_lines = 1
 autocmd FileType gitcommit call setpos('.', [0, 1, 1, 0])
 set pastetoggle=<C-p>
