@@ -38,8 +38,6 @@ setopt CORRECT_ALL
 setopt NO_HUP
 # Save each command’s beginning timestamp and the duration
 setopt EXTENDED_HISTORY
-# On an ambiguous completion, instead of listing possibilities or beeping, insert the first match immediately.
-setopt MENU_COMPLETE
 
 fpath=($DOTFILES_HOME/zsh/zsh-completions/src $fpath)
 source $DOTFILES_HOME/zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
