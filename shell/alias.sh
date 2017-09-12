@@ -1,3 +1,4 @@
+alias s=sudo
 alias fucking=sudo
 alias bd='cd $OLDPWD'
 alias ..='cd ..'
