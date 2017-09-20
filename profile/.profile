@@ -25,6 +25,9 @@ if hash powerline-daemon 2>/dev/null; then
 	powerline-daemon -q
 fi
 
+# Load encryption functions
+. $DOTFILES_HOME/script/function/encryption.sh
+
 if [ -n "$BASH_VERSION" ]; then
 	if [ -f "$HOME/.bashrc" ]; then
 		. "$HOME/.bashrc"
