@@ -4,7 +4,7 @@
 
 dotfiles_encrypt() {
 	local file="$1"
-	local pass="$(openssl rand 200)"
+	local pass="$(openssl rand -base64 170)"
 	openssl aes-256-cbc -in $file -out $file.enc -pass pass:"$pass"
 	echo "$pass" | openssl rsautl -encrypt -pubin -inkey <(ssh-keygen -e -f ~/.ssh/id_rsa.pub -m PKCS8) -out $file.key
 }
