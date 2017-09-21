@@ -19,6 +19,17 @@ fi
 
 source $DOTFILES_HOME/script/function/log.sh
 source $DOTFILES_HOME/script/function/source.sh
+source $DOTFILES_HOME/script/function/encryption.sh
+
+decrypt_dotfiles() {
+	base_folder=$1
+	info "decrypting dotfiles in $base_folder"
+	for file in $(find -H "$base_folder" -maxdepth 3 -name '*.enc' -not -path '*/.git.enc' -not -path '*/.git/**' -not -path "$base_folder/if/**")
+	do
+		dotfiles_decrypt $file
+		success "decrypted $file"
+	done
+}
 
 # Author: Charles Duffy (http://stackoverflow.com/a/29310477)
 # License: cc by-sa 3.0 (licenses/cc-by-sa-3.0.txt)
@@ -224,6 +235,11 @@ fi
 
 # Create fixed location link for dotfiles home
 ln -sfn $DOTFILES_HOME ~/.dotfiles.home
+
+# Decrypt hostname specific dotfiles
+if [ "$(hostname)" ] && [ -d "$DOTFILES_HOME/if/hostname/$(hostname)" ]; then
+	decrypt_dotfiles "$DOTFILES_HOME/if/hostname/$(hostname)/"
+fi
 
 install_dotfiles $DOTFILES_HOME
 # Install distro specific dotfiles
