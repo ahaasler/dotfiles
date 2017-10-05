@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Check pip installed
+hash pip 2>/dev/null || return
+
 info 'installing common python modules'
 if ( pip install --upgrade --user -r "$DOTFILES_HOME/python/software.txt" ) 2>&1 | while read line
 	do
