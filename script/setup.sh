@@ -170,7 +170,9 @@ install_dotfiles () {
 	do
 		src="${file%.*}"
 		dst="$(expandPath $(head -n 1 $file))"
-		mkdir -p $(dirname $dst)
+		if [ ! -d "$(dirname $dst)" ]; then
+			mkdir -p $(dirname $dst)
+		fi
 		link_file "$src" "$dst"
 	done
 
@@ -179,7 +181,9 @@ install_dotfiles () {
 		src="${file%.*}"
 		dst="$(expandPath $(head -n 1 $file))"
 		info "root necessary to setup $dst"
-		sudo mkdir -p $(dirname $dst)
+		if [ ! -d "$(dirname $dst)" ]; then
+			sudo mkdir -p $(dirname $dst)
+		fi
 		link_file "$src" "$dst" "sudo"
 	done
 }
