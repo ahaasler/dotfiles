@@ -1,4 +1,8 @@
 alias gi=git
+alias many=git
+alias much=git
+alias such=git
+alias very=git
 alias gc='git commit'
 alias gca='gc -a'
 alias gcm='gc -m'
