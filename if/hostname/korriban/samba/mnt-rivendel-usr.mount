@@ -7,7 +7,7 @@ Wants=network-online.target systemd-resolved.service
 [Mount]
 What=//rivendel/usr
 Where=/mnt/rivendel/usr
-Options=credentials=/etc/samba/creds/rivendel,iocharset=utf8,rw,x-systemd.automount
+Options=credentials=/etc/samba/creds/rivendel,iocharset=utf8,rw,x-systemd.automount,vers=1.0
 Type=cifs
 TimeoutSec=30
 
