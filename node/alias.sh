@@ -1,0 +1,1 @@
+alias jsondiff=json-diff
