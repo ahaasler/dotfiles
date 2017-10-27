@@ -93,3 +93,7 @@
 	path = gnome/extensions/GnomeShell_DynamicTopBar
 	url = https://github.com/AMDG2/GnomeShell_DynamicTopBar.git
 	branch = master
+[submodule "shell/neofetch"]
+	path = shell/neofetch
+	url = https://github.com/dylanaraps/neofetch.git
+	branch = master
