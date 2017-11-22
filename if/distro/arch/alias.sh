@@ -1,0 +1,1 @@
+alias spacman='sudo pacman'
