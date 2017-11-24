@@ -1,3 +1,5 @@
 alias spacman='sudo pacman'
 alias pacsyu='spacman -Syu'
 alias pacs='spacman -S'
+alias aursyu='aurget -Syu'
+alias aurs='aurget -S'
