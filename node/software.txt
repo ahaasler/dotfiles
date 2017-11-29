@@ -1,4 +1,5 @@
 bower
+grunt
 gulp
 json-diff
 underscore-cli
