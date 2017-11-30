@@ -97,3 +97,7 @@
 	path = shell/neofetch
 	url = https://github.com/dylanaraps/neofetch.git
 	branch = master
+[submodule "vim/.vim/bundle/fetch"]
+	path = vim/.vim/bundle/fetch
+	url = https://github.com/kopischke/vim-fetch.git
+	branch = master
