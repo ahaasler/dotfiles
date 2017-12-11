@@ -101,3 +101,7 @@
 	path = vim/.vim/bundle/fetch
 	url = https://github.com/kopischke/vim-fetch.git
 	branch = master
+[submodule "vim/.vim/bundle/startify"]
+	path = vim/.vim/bundle/startify
+	url = https://github.com/mhinz/vim-startify.git
+	branch = master
