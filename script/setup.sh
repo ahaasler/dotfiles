@@ -268,17 +268,5 @@ if [ "$(hostname)" ] && [ -d "$DOTFILES_HOME/if/hostname/$(hostname)" ]; then
 	source_dotfiles_pattern '*setup.sh' "if/hostname/$(hostname)/"
 fi
 
-# Refresh fonts
-if hash fc-cache 2>/dev/null; then
-	info "refreshing fonts"
-	if fc-cache -f -v 2>&1 | while read line; do debug "$line"; done ; then
-		success "generated font cache"
-	else
-		warn "font generation failed"
-	fi
-else
-	info "skipped font refresh because fc-cache is not installed"
-fi
-
 # Warn about changes
 warn "to see all changes logout and login again"
