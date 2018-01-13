@@ -2,4 +2,5 @@ bower
 grunt
 gulp
 json-diff
+trash-cli
 underscore-cli
