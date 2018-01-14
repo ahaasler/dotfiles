@@ -1,4 +1,5 @@
 bower
+empty-trash-cli
 grunt
 gulp
 json-diff
