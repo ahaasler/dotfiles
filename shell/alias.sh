@@ -1,6 +1,7 @@
 alias s=sudo
 alias fucking=sudo
 alias bd='cd $OLDPWD'
+alias cdd='cd $DOTFILES_HOME'
 alias ..='cd ..'
 alias .2='cd ../..'
 alias .3='cd ../../..'
@@ -18,7 +19,6 @@ alias ..6='.6'
 alias ..7='.7'
 alias ..8='.8'
 alias ..9='.9'
-alias cdd='cd $DOTFILES_HOME'
 alias ls='ls --color=auto'
 alias l='ls -lh'
 alias ll='l -a'
