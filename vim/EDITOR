@@ -1,0 +1,3 @@
+#!/bin/sh
+source $DOTFILES_HOME/vim/alias.sh
+vi -- "$@"
