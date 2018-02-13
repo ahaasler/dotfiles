@@ -1,1 +1,1 @@
-export MAVEN_OPTS="-Xmx800m -Xss2048k -DgenerateBackupPoms=false"
+export MAVEN_OPTS="-Xmx800m -Xss4m -DgenerateBackupPoms=false"
