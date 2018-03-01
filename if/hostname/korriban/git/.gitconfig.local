@@ -1,2 +1,7 @@
 [user]
 	email = adrian.haasler@amplia.es
+	signingkey = adrian.haasler@amplia.es
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
