@@ -13,7 +13,7 @@
 ###
 
 # The directory within which to build.
-build_directory="$PWD"
+build_directory="/tmp"
 
 # Should aurget remove the extracted source directory after processing?
 discard_sources=true
