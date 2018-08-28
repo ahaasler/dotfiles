@@ -105,3 +105,7 @@
 	path = vim/.vim/bundle/startify
 	url = https://github.com/mhinz/vim-startify.git
 	branch = master
+[submodule "shell/scripts/mikelward"]
+	path = shell/scripts/mikelward
+	url = https://github.com/mikelward/scripts.git
+	branch = master
