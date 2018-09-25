@@ -63,7 +63,7 @@
 	branch = master
 [submodule "gnome/extensions/gs-extensions-drop-down-terminal"]
 	path = gnome/extensions/gs-extensions-drop-down-terminal
-	url = https://github.com/zzrough/gs-extensions-drop-down-terminal.git
+	url = https://github.com/ahaasler/gs-extensions-drop-down-terminal.git
 	branch = master
 [submodule "gnome/extensions/bing-wallpaper-gnome-extension"]
 	path = gnome/extensions/bing-wallpaper-gnome-extension
