@@ -1,0 +1,7 @@
+alias red='colorize red'
+alias green='colorize green'
+alias yellow='colorize yellow'
+alias blue='colorize blue'
+alias purple='colorize purple'
+alias cyan='colorize cyan'
+alias white='colorize white'
