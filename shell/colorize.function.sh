@@ -12,5 +12,5 @@ colorize() {
 			:) echo "-$OPTARG requires an argument" ;;
 		esac
 	done
-        sed "$substitutions"
+	sed "$substitutions"
 }
