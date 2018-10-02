@@ -1,23 +1,16 @@
 colorize() {
-	color=37
-	if [ "$1" = "red" ]
-	then
-		color=31
-	elif [ "$1" = "green" ]
-	then
-		color=32
-	elif [ "$1" = "yellow" ]
-	then
-		color=33
-	elif [ "$1" = "blue" ]
-	then
-		color=34
-	elif [ "$1" = "purple" ]
-	then
-		color=35
-	elif [ "$1" = "cyan" ]
-	then
-		color=36
-	fi
-        sed "s^$2^\x1b[1;${color}m&\x1b[0m^g"
+	substitutions=''
+	while getopts ":r:g:y:b:p:c:w:" opt; do
+		case $opt in
+			r) substitutions+=";s^$OPTARG^\x1b[1;31m&\x1b[0m^g" ;;
+			g) substitutions+=";s^$OPTARG^\x1b[1;32m&\x1b[0m^g" ;;
+			y) substitutions+=";s^$OPTARG^\x1b[1;33m&\x1b[0m^g" ;;
+			b) substitutions+=";s^$OPTARG^\x1b[1;34m&\x1b[0m^g" ;;
+			p) substitutions+=";s^$OPTARG^\x1b[1;35m&\x1b[0m^g" ;;
+			c) substitutions+=";s^$OPTARG^\x1b[1;36m&\x1b[0m^g" ;;
+			w) substitutions+=";s^$OPTARG^\x1b[1;37m&\x1b[0m^g" ;;
+			:) echo "-$OPTARG requires an argument" ;;
+		esac
+	done
+        sed "$substitutions"
 }
