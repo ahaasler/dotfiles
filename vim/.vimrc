@@ -9,6 +9,8 @@ set number
 set relativenumber
 set ignorecase
 set smartcase
+set list
+set listchars=tab:│\ ,extends:›,precedes:‹,space:·,nbsp:␣,trail:•,eol:¬
 let g:gitgutter_highlight_lines = 1
 autocmd FileType gitcommit call setpos('.', [0, 1, 1, 0])
 set pastetoggle=<C-p>
