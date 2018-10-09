@@ -1,8 +1,9 @@
-language: bash
+language: python
+sudo: required
+dist: xenial
+python: "3.7"
 script: ./script/install.sh -Bd
 before_install:
-- alias python=python3
-- alias pip=pip3
 - git config --global user.name "$GIT_USER"
 - git config --global user.email $GIT_EMAIL
 after_success: '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && [ "${TRAVIS_BRANCH}" = "master" ] && ./script/travis/tag.sh || false'
