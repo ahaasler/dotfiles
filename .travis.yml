@@ -1,5 +1,5 @@
 language: bash
-script: ./script/install.sh -B
+script: ./script/install.sh -Bd
 before_install:
 - git config --global user.name "$GIT_USER"
 - git config --global user.email $GIT_EMAIL
