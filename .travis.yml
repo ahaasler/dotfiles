@@ -1,6 +1,7 @@
 language: bash
 script: ./script/install.sh -Bd
 before_install:
+- pip install --upgrade pip
 - git config --global user.name "$GIT_USER"
 - git config --global user.email $GIT_EMAIL
 after_success: '[ "${TRAVIS_PULL_REQUEST}" = "false" ] && [ "${TRAVIS_BRANCH}" = "master" ] && ./script/travis/tag.sh || false'
