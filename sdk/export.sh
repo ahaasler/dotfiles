@@ -1,7 +1,7 @@
 # Initialize SDKMAN variables, init script has not been processed in git.
 export SDKMAN_VERSION="5.7.3+337"
-export SDKMAN_LEGACY_API="https://api.sdkman.io/1"
-export SDKMAN_CURRENT_API="https://api.sdkman.io/2"
+export SDKMAN_SERVICE="https://api.sdkman.io/1"
+export SDKMAN_CANDIDATES_API="https://api.sdkman.io/2"
 export SDKMAN_DIR="$HOME/.sdkman"
 
 # Source sdkman module scripts.
