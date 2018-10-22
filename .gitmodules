@@ -109,3 +109,7 @@
 	path = shell/scripts/mikelward
 	url = https://github.com/mikelward/scripts.git
 	branch = master
+[submodule "android/udev-rules"]
+	path = android/udev-rules
+	url = https://github.com/M0Rf30/android-udev-rules
+	branch = master
