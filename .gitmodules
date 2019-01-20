@@ -113,3 +113,7 @@
 	path = android/udev-rules
 	url = https://github.com/M0Rf30/android-udev-rules
 	branch = master
+[submodule "if/distro/arch/pacman/dummy/nodejs"]
+	path = if/distro/arch/pacman/dummy/nodejs
+	url = https://aur.archlinux.org/nodejs-fake.git/
+	branch = master
