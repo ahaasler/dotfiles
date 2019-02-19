@@ -1,5 +1,5 @@
 json-sort() {
-	if [ $# -eq 0 ]; then; in="sys.stdin"; else; in="open('$1')"; fi
+	if [ $# -eq 0 ]; then in="sys.stdin"; else in="open('$1')"; fi
 	python -c "import json, sys; json.dump(json.load($in), sys.stdout, indent=2, sort_keys=True)"
 }
 
