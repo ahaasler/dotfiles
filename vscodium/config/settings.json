@@ -1,6 +1,9 @@
 {
     "workbench.colorTheme": "Material Theme Darker High Contrast",
     "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorCustomizations": {
+        "statusBar.foreground" : "#bdbdbd"
+    },
     "editor.fontFamily": "'Source Code Pro', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.renderWhitespace": "boundary",
     "editor.insertSpaces": false
