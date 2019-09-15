@@ -22,10 +22,6 @@
 	path = zsh/zsh-completions
 	url = https://github.com/zsh-users/zsh-completions.git
 	branch = master
-[submodule "shell/powerline"]
-	path = shell/powerline
-	url = https://github.com/powerline/powerline.git
-	branch = master
 [submodule "fonts/source-code-pro"]
 	path = fonts/source-code-pro
 	url = https://github.com/adobe-fonts/source-code-pro
