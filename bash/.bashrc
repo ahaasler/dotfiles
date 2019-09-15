@@ -14,6 +14,6 @@ export POWERLINE_CONFIG_OVERRIDES=ext.shell.theme=default_leftonly
 PS1='[\u@\h \W]\$ '
 
 # Powerline
-if [ -f $DOTFILES_HOME/shell/powerline/powerline/bindings/bash/powerline.sh ]; then
-	source $DOTFILES_HOME/shell/powerline/powerline/bindings/bash/powerline.sh
+if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
+	source /usr/share/powerline/bindings/bash/powerline.sh
 fi

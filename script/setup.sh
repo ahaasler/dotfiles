@@ -188,31 +188,6 @@ install_dotfiles () {
 	done
 }
 
-install_powerline() {
-	info 'installing powerline'
-	if ( cd $DOTFILES_HOME/shell/powerline && python setup.py install --user ) 2>&1 | while read line
-			do
-				debug "$line";
-				if [ "$line" == "Compiling C version of powerline-client failed" ]; then
-					warn "installing powerline's python command (slow), install gcc and setup again for faster prompt"
-				fi
-			done
-	then
-		success "installed powerline"
-	else
-		warn "powerline installation failed"
-	fi
-}
-
-install_powerline_gistatus() {
-	info 'installing powerline-gitstatus'
-	if ( cd $DOTFILES_HOME/shell/powerline-gitstatus && python setup.py install --user ) 2>&1 | while read line; do debug "$line"; done ; then
-		success "installed powerline-gistatus"
-	else
-		warn "powerline-gistatus installation failed"
-	fi
-}
-
 # Execution
 while getopts ":dvh:OBS" opt; do
 	case $opt in
@@ -254,8 +229,6 @@ fi
 if [ "$(hostname)" ] && [ -d "$DOTFILES_HOME/if/hostname/$(hostname)" ]; then
 	install_dotfiles "$DOTFILES_HOME/if/hostname/$(hostname)/"
 fi
-install_powerline
-install_powerline_gistatus
 
 # Setup specific parts
 source_dotfiles_pattern '*setup.sh' '' "$DOTFILES_HOME/script/setup.sh"

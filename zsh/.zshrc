@@ -6,8 +6,8 @@ source $DOTFILES_HOME/tmux/start.sh
 emulate zsh
 
 # Powerline
-if [[ -r $DOTFILES_HOME/shell/powerline/powerline/bindings/zsh/powerline.zsh ]]; then
-	source $DOTFILES_HOME/shell/powerline/powerline/bindings/zsh/powerline.zsh
+if [[ -r /usr/share/powerline/bindings/zsh/powerline.zsh ]]; then
+	source /usr/share/powerline/bindings/zsh/powerline.zsh
 fi
 
 # Key bindings
