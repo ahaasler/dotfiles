@@ -113,3 +113,7 @@
 	path = fonts/font-awesome
 	url = https://github.com/FortAwesome/Font-Awesome.git
 	branch = master
+[submodule "shell/powerline"]
+	path = shell/powerline
+	url = https://github.com/powerline/powerline.git
+	branch = master
