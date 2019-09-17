@@ -31,3 +31,9 @@ URxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 ! white
 *color7: #FFFFFF
 *color15: #FFFFFF
+
+!! URxvt Appearance
+URxvt*depth: 32
+URxvt*background: rgba:0000/0000/0200/c800
+URxvt*foreground: white
+URxvt*highlightColor: white
