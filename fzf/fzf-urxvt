@@ -11,4 +11,4 @@ print_input >> $input | cat &
 urxvt -name "URxvtFZF" -e sh -c "fzf $args < $input > $output"
 cat $output
 pkill -P $$
-exit
+rm $input $output
