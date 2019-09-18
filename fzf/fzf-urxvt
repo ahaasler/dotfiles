@@ -1,10 +1,14 @@
 #!/bin/bash
 
 args="$@"
-input=$(mktemp /tmp/fzf-urxvt-input.XXXXXXXXXX) || { echo "Failed to create temp file"; exit 1; }
-output=$(mktemp /tmp/fzf-urxvt-output.XXXXXXXXXX) || { echo "Failed to create temp file"; exit 1; }
-while read x ; do echo "$x" >> $input ; done | cat &
-urxvt -name "URxvtFZF" -e sh -c "tail -n +1 -f $input | fzf $args > $output"
+input=$(mktemp /tmp/fzf-urxvt-input.XXXXXXXXXX -u)
+mkfifo $input || { echo "Failed to create temp input pipe"; exit 1; }
+output=$(mktemp /tmp/fzf-urxvt-output.XXXXXXXXXX) || { echo "Failed to create temp output file"; exit 1; }
+print_input() {
+	while read x ; do echo "$x" ; done
+}
+print_input >> $input | cat &
+urxvt -name "URxvtFZF" -e sh -c "fzf $args < $input > $output"
 cat $output
 pkill -P $$
 exit
