@@ -176,6 +176,19 @@ install_dotfiles () {
 		link_file "$src" "$dst"
 	done
 
+	for folder in $(find -H "$base_folder" -maxdepth 3 -name '*.contentlink' -not -path '*/.git.contentlink' -not -path '*/.git/**' -not -path "$base_folder/if/**")
+	do
+		src="${folder%.*}"
+		dst="$(expandPath $(head -n 1 $folder))"
+		if [ ! -d "$(dirname $dst)" ]; then
+			mkdir -p $(dirname $dst)
+		fi
+		for file in $(ls -A1 $src)
+		do
+			link_file "$src/$file" "$dst/$file"
+		done
+	done
+
 	for file in $(find -H "$base_folder" -maxdepth 3 -name '*.rootlink' -not -path '*/.git.rootlink' -not -path '*/.git/**' -not -path "$base_folder/if/**")
 	do
 		src="${file%.*}"
