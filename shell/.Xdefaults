@@ -46,7 +46,7 @@ URxvt*font: xft:Source Code Pro:size=12:antialias=true:hinting=true
 URxvt*boldFont: xft:Source Code Pro:style=Bold:size=12:antialias=true:hinting=true
 URxvt*italicFont: xft:Source Code Pro:style=Italic:size=12:antialias=true:hinting=true
 URxvt*boldItalicFont: xft:Source Code Pro:style=Bold Italic:size=12:antialias=true:hinting=true
-URxvt*letterSpace: -2
+URxvt*letterSpace: 0
 
 URxvt*depth: 32
 URxvt*background: rgba:0000/0000/0200/c800
