@@ -12,10 +12,11 @@ dotfiles_encrypt() {
 	local pass="$(openssl rand -base64 170)"
 	openssl aes-256-cbc -in $file -out $target.enc -pass pass:"$pass"
 	echo "$pass" | openssl rsautl -encrypt -pubin -inkey <(ssh-keygen -e -f ~/.ssh/id_rsa.pub -m PKCS8) -out $target.key
+	mv "$1" "$1~"
 }
 
 dotfiles_decrypt() {
 	local file=$(echo "$1" | sed 's/\.enc//g')
-	local pass="$(openssl rsautl -decrypt -ssl -inkey ~/.ssh/id_rsa -in $file.key)"
+	local pass="$(openssl rsautl -decrypt -pkcs -inkey ~/.ssh/id_rsa -in $file.key)"
 	openssl aes-256-cbc -d -in $file.enc -out $file.dec -pass pass:"$pass"
 }
