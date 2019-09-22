@@ -193,8 +193,8 @@ install_dotfiles () {
 	do
 		src="${file%.*}"
 		dst="$HOME/.local/bin"
-		if [ ! -d "$(dirname $dst)" ]; then
-			mkdir -p $(dirname $dst)
+		if [ ! -d "$dst" ]; then
+			mkdir -p $dst
 		fi
 		if [ -d "${src}" ] ; then
 			for file in $(ls -A1 $src)
