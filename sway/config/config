@@ -4,6 +4,9 @@
 #
 # Read `man 5 sway` for a complete reference.
 
+### Appearance
+font pango:Source Sans Pro:FontAwesome 11
+
 ### Variables
 #
 # Logo key. Use Mod1 for Alt.
