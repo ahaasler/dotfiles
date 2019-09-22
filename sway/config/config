@@ -18,7 +18,16 @@ set $term urxvt
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
 set $menu print-apps | fzf-urxvt --border --reverse --multi --bind change:top | filter-app-exec | xargs -r -L 1 swaymsg -t command exec --
+# Default wallpaper
+set $wallpaper /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png
+# Hostname variables overrides
+include ~/.config/sway/$(hostname)/variables
 
+### Output configuration
+#
+# Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
+output * bg $wallpaper fill
+#
 # Example configuration:
 #
 #   output HDMI-A-1 resolution 1920x1080 position 1920,0
