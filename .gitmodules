@@ -117,3 +117,7 @@
 	path = shell/powerline
 	url = https://github.com/powerline/powerline.git
 	branch = master
+[submodule "fonts/source-sans-pro"]
+	path = fonts/source-sans-pro
+	url = https://github.com/adobe-fonts/source-sans-pro.git
+	branch = master
