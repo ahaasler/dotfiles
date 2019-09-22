@@ -1,2 +1,5 @@
+# Dropdown display
+set $dropdownDisplay eDP-1
+
 # Wallpaper
 set $wallpaper ~/.dotfiles.home/wallpaper/montreal-by-night.jpg

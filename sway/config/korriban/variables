@@ -1,2 +1,5 @@
+# Dropdown display
+set $dropdownDisplay VGA-1
+
 # Wallpaper
 set $wallpaper ~/.dotfiles.home/wallpaper/under-the-bridge.jpeg
