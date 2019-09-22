@@ -189,6 +189,23 @@ install_dotfiles () {
 		done
 	done
 
+	for file in $(find -H "$base_folder" -maxdepth 3 -name '*.binlink' -not -path '*/.git.binlink' -not -path '*/.git/**' -not -path "$base_folder/if/**")
+	do
+		src="${file%.*}"
+		dst="$HOME/.local/bin"
+		if [ ! -d "$(dirname $dst)" ]; then
+			mkdir -p $(dirname $dst)
+		fi
+		if [ -d "${src}" ] ; then
+			for file in $(ls -A1 $src)
+			do
+				link_file "$src/$file" "$dst/$file"
+			done
+		else
+			link_file "$src" "$dst/$(basename "$src")"
+		fi
+	done
+
 	for file in $(find -H "$base_folder" -maxdepth 3 -name '*.rootlink' -not -path '*/.git.rootlink' -not -path '*/.git/**' -not -path "$base_folder/if/**")
 	do
 		src="${file%.*}"
