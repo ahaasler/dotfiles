@@ -40,6 +40,8 @@ URxvt.keysym.Shift-Down: command:\033]721;1\007
 *color15: #FFFFFF
 
 !! URxvt Appearance
+URxvt.scrollBar: false
+
 URxvt*font: xft:Source Code Pro:size=12:antialias=true:hinting=true
 URxvt*boldFont: xft:Source Code Pro:style=Bold:size=12:antialias=true:hinting=true
 URxvt*italicFont: xft:Source Code Pro:style=Italic:size=12:antialias=true:hinting=true
