@@ -43,3 +43,10 @@ URxvt*depth: 32
 URxvt*background: rgba:0000/0000/0200/c800
 URxvt*foreground: white
 URxvt*highlightColor: white
+
+!! URxvtFZF menu
+URxvtFZF*internalBorder: 10
+URxvtFZF*font: xft:Source Code Pro:size=16:antialias=true:hinting=true
+URxvtFZF*boldFont: xft:Source Code Pro:style=Bold:size=16:antialias=true:hinting=true
+URxvtFZF*italicFont: xft:Source Code Pro:style=Italic:size=16:antialias=true:hinting=true
+URxvtFZF*boldItalicFont: xft:Source Code Pro:style=Bold Italic:size=16:antialias=true:hinting=true
