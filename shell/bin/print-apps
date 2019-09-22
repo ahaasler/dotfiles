@@ -1,0 +1,1 @@
+find /usr/share/applications/ ~/.local/share/applications/ -name '*.desktop' | xargs -d '\n' awk 'FNR==1{pf=0;printf "\n"} /^\[Desktop Entry\]$/{pf=1;next} /^\[/{pf=0} pf>0&&/^(Name|Exec)=/{sub(/(Name|Exec)=/,"");printf "%s\t",$0}' | column -t -s $'\t' | sort
