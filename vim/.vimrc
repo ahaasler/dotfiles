@@ -5,6 +5,7 @@ set laststatus=2
 set t_Co=256
 set spell spelllang=en_us
 colorscheme molokai
+hi Normal guibg=NONE ctermbg=NONE
 set number
 set relativenumber
 set ignorecase
