@@ -16,12 +16,14 @@ set $left h
 set $down j
 set $up k
 set $right l
+# Style
+set $gaps 10
 # Dropdown apps
 set $dropdownDisplay up
 set $dropdownWidth 1920
 set $dropdownHeight 472
-set $dropdownX 0
-set $dropdownY 0
+set $dropdownX -$gaps
+set $dropdownY -$gaps
 # Your preferred terminal emulator
 set $term urxvt
 # Your preferred application launcher
@@ -222,6 +224,11 @@ bindsym $mod+r mode "resize"
 bar {
 	swaybar_command waybar
 }
+
+#
+# Style:
+#
+gaps inner $gaps
 
 # Default touchpad behavior
 input type:touchpad {
