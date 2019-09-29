@@ -18,6 +18,11 @@ set $up k
 set $right l
 # Style
 set $gaps 10
+set $borderSize 1
+set $borderAccent #88ffff
+set $borderUrgent #f44336
+set $borderTextPrimary #212121
+set $borderTextSecondary #bbbbbb
 # Dropdown apps
 set $dropdownDisplay up
 set $dropdownWidth 1920
@@ -229,6 +234,12 @@ bar {
 # Style:
 #
 gaps inner $gaps
+default_border pixel $borderSize
+#class                  border          background      text                   indicator       child_border
+client.focused          $borderAccentee $borderAccentf5 $borderTextPrimarydd   $borderAccentff $borderAccentee
+client.focused_inactive $borderAccent55 $borderAccent66 $borderTextSecondarydd $borderAccent99 $borderAccent55
+client.unfocused        $borderAccent11 $borderAccent22 $borderTextSecondarydd $borderAccent55 $borderAccent11
+client.urgent           $borderUrgentee $borderUrgentf5 $borderTextPrimarydd   $borderUrgentff $borderUrgentee
 
 # Default touchpad behavior
 input type:touchpad {
