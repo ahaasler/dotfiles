@@ -21,7 +21,7 @@ set $dropdownDisplay up
 set $dropdownWidth 1920
 set $dropdownHeight 472
 set $dropdownX 0
-set $dropdownY 32
+set $dropdownY 0
 # Your preferred terminal emulator
 set $term urxvt
 # Your preferred application launcher
@@ -232,12 +232,6 @@ input type:touchpad {
 }
 
 #
-### Starting apps
-#
-# Dropdown terminal
-exec $term -name "dropdown-terminal"
-
-#
 ### Custom windows
 #
 # Floating menu
@@ -261,3 +255,9 @@ for_window [instance="^dropdown.*$"] {
 
 include ~/.config/sway/$(hostname)/*
 include /etc/sway/config.d/*
+
+#
+### Starting apps
+#
+# Dropdown apps
+exec ~/.config/sway/exec-dropdowns
