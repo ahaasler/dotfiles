@@ -188,7 +188,7 @@ output * bg $wallpaper fill
     bindsym $mod+minus scratchpad show
 
 # Dropdown terminal
-bindsym $mod+t [con_mark="terminal"] focus output $dropdownDisplay, scratchpad show
+bindsym $mod+t [con_mark="terminal"] focus output $dropdownDisplay, scratchpad show, resize set $dropdownWidth $dropdownHeight, move position $dropdownX $dropdownY
 
 #
 # Resizing containers:
