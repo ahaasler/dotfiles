@@ -260,4 +260,4 @@ include /etc/sway/config.d/*
 ### Starting apps
 #
 # Dropdown apps
-exec ~/.config/sway/exec-dropdowns
+exec urxvt -name "dropdown-terminal"

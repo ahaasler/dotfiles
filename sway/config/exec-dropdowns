@@ -1,6 +1,0 @@
-until pgrep -t $(tty | sed -e "s:/dev/::") waybar
-do
-	sleep 1
-done
-sleep 1
-swaymsg exec -- urxvt -name "dropdown-terminal"
