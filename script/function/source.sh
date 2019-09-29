@@ -1,6 +1,7 @@
 #!/bin/bash
 
 source_dotfiles_pattern() {
+	hash find 2>/dev/null || return 1
 	local folder="$DOTFILES_HOME/$2"
 	local pattern="$1"
 	local blacklist="$3"

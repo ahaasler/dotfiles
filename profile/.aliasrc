@@ -6,6 +6,6 @@ if [ "$DISTRO" ] && [ -d "$DOTFILES_HOME/if/distro/$DISTRO" ]; then
 fi
 
 # Source hostname specific aliases
-if [ "$(hostname)" ] && [ -d "$DOTFILES_HOME/if/hostname/$(hostname)" ]; then
+if hash hostname 2>/dev/null && [ "$(hostname)" ] && [ -d "$DOTFILES_HOME/if/hostname/$(hostname)" ]; then
 	source_dotfiles_pattern '*alias.sh' "if/hostname/$(hostname)/"
 fi
