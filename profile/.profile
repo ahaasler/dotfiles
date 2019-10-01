@@ -24,7 +24,7 @@ fi
 # Load encryption functions
 . $DOTFILES_HOME/script/function/encryption.sh
 
-if [ -n "$BASH_VERSION" ]; then
+if [ -n "$BASH_VERSION" ] && shopt -q login_shell; then
 	if [ -f "$HOME/.bashrc" ]; then
 		. "$HOME/.bashrc"
 	fi

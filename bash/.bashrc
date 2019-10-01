@@ -5,6 +5,9 @@
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
+# If not running in a login shell, source profile
+shopt -q login_shell || source ~/.profile
+
 # Start tmux if conditions are met
 source $DOTFILES_HOME/tmux/start.sh
 
