@@ -22,3 +22,8 @@ nmap <C-n> :set invrelativenumber<CR>
 command Gllc :.!git log -1 --pretty=\%B
 command -nargs=1 Gllcs :.!git log -1 --pretty=\%B --skip '<args>'
 command -nargs=1 Gllsc :.!git log -1 --pretty=\%B --skip '<args>'
+if &diff
+	map ]l :diffget LOCAL<CR>
+	map ]b :diffget BASE<CR>
+	map ]r :diffget REMOTE<CR>
+endif
