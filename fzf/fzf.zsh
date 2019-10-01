@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 # Completion
 if [[ -r /usr/share/fzf/completion.zsh ]]; then
 	source /usr/share/fzf/completion.zsh
