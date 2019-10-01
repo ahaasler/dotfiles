@@ -20,3 +20,13 @@ PS1='[\u@\h \W]\$ '
 if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
 	source /usr/share/powerline/bindings/bash/powerline.sh
 fi
+
+source_dotfiles_pattern '*.bash'
+# Source distro specific bash config
+if [ "$DISTRO" ] && [ -d "$DOTFILES_HOME/if/distro/$DISTRO" ]; then
+	source_dotfiles_pattern '*.bash' "if/distro/$DISTRO/"
+fi
+# Source distro specific  config
+if [ "$(hostname)" ] && [ -d "$DOTFILES_HOME/if/hostname/$(hostname)" ]; then
+	source_dotfiles_pattern '*.bash' "if/hostname/$(hostname)/"
+fi
