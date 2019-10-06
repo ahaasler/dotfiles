@@ -102,9 +102,6 @@ output * bg $wallpaper fill
 
     # Reload the configuration file
     bindsym $mod+Shift+c reload
-
-    # Exit sway (logs you out of your Wayland session)
-    bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -b 'Yes, exit sway' 'swaymsg exit'
 #
 # Moving around:
 #
@@ -225,6 +222,22 @@ mode "resize" {
     bindsym Escape mode "default"
 }
 bindsym $mod+r mode "resize"
+
+# System menu (logs you out of your Wayland session)
+set $modeSystem System - (l)ock | (e)xit | (s)uspend | (h)ibernate | (r)eboot | (S)hutdown
+mode "$modeSystem" {
+    bindsym l exec swaylock, mode "default"
+    bindsym e exit, mode "default"
+    bindsym s exec "swaylock & systemctl suspend", mode "default"
+    bindsym h exec "swaylock & systemctl hibernate", mode "default"
+    bindsym r exec systemctl reboot, mode "default"
+    bindsym Shift+s exec systemctl poweroff, mode "default"
+
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Shift+e mode "$modeSystem"
 
 #
 # Status Bar:
