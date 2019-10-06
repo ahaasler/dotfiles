@@ -181,6 +181,10 @@ output * bg $wallpaper fill
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
+
+focus_follows_mouse no
+mouse_warping none
+
 #
 # Scratchpad:
 #
