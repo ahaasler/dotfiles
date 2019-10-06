@@ -279,3 +279,5 @@ include /etc/sway/config.d/*
 #
 # Dropdown apps
 exec urxvt -name "dropdown-terminal"
+# Windows transparency script
+exec python ~/.config/sway/inactive-windows-transparency.py
