@@ -4,7 +4,9 @@ filetype plugin indent on
 set laststatus=2
 set t_Co=256
 set spell spelllang=en_us
-colorscheme molokai
+let g:material_style='dark'
+set background=dark
+colorscheme vim-material-tasty
 hi Normal guibg=NONE ctermbg=NONE
 set number
 set relativenumber
