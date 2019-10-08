@@ -121,3 +121,7 @@
 	path = fonts/source-sans-pro
 	url = https://github.com/adobe-fonts/source-sans-pro.git
 	branch = master
+[submodule "vim/.vim/bundle/vim-material-tasty"]
+	path = vim/.vim/bundle/vim-material-tasty
+	url = https://github.com/ahaasler/vim-material-tasty
+	branch = master
