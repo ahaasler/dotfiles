@@ -6,6 +6,9 @@ syntax on
 filetype plugin indent on
 set laststatus=2
 set t_Co=256
+let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+set termguicolors
 set spell spelllang=en_us
 let g:material_style='dark'
 set background=dark
