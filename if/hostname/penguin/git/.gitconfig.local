@@ -1,0 +1,6 @@
+[user]
+	signingkey = dev@adrianhaasler.com
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
