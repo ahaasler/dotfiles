@@ -1,0 +1,1 @@
+../launcher-desktop/sway-launcher-desktop.sh

@@ -33,7 +33,7 @@ set $dropdownY -$gaps
 set $term urxvt
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
-set $menu print-apps | fzf-urxvt --border --reverse --multi --bind change:top | filter-app-exec | xargs -r -L 1 swaymsg -t command exec --
+set $menu exec urxvt -name URxvtFZF -e env TERMINAL_COMMAND="urxvt -e" ~/.config/sway/sway-launcher-desktop.sh
 set $menuHeight 290
 set $menuWidth 790
 # Default wallpaper
@@ -273,6 +273,7 @@ input type:touchpad {
 for_window [class="URxvt" instance="URxvtFZF$"] {
 	floating enable
 	border pixel 0
+	sticky enable
 	resize set $menuWidth $menuHeight
 }
 
