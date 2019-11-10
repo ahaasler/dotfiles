@@ -125,3 +125,7 @@
 	path = vim/.vim/bundle/vim-material-tasty
 	url = https://github.com/ahaasler/vim-material-tasty
 	branch = master
+[submodule "sway/launcher-desktop"]
+	path = sway/launcher-desktop
+	url = https://github.com/Biont/sway-launcher-desktop.git
+	branch = master
