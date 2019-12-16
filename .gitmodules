@@ -129,3 +129,7 @@
 	path = sway/launcher-desktop
 	url = https://github.com/Biont/sway-launcher-desktop.git
 	branch = master
+[submodule "python/pyenv"]
+	path = python/pyenv
+	url = https://github.com/pyenv/pyenv.git
+	branch = master
