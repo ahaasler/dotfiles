@@ -133,3 +133,7 @@
 	path = python/pyenv
 	url = https://github.com/pyenv/pyenv.git
 	branch = master
+[submodule "fonts/hack"]
+	path = fonts/hack
+	url = https://github.com/source-foundry/Hack.git
+	branch = master
