@@ -42,10 +42,10 @@ URxvt.keysym.Shift-Down: command:\033]721;1\007
 !! URxvt Appearance
 URxvt.scrollBar: false
 
-URxvt*font: xft:Source Code Pro:size=12:antialias=true:hinting=true
-URxvt*boldFont: xft:Source Code Pro:style=Bold:size=12:antialias=true:hinting=true
-URxvt*italicFont: xft:Source Code Pro:style=Italic:size=12:antialias=true:hinting=true
-URxvt*boldItalicFont: xft:Source Code Pro:style=Bold Italic:size=12:antialias=true:hinting=true
+URxvt*font: xft:Hack:size=12:antialias=true:hinting=true
+URxvt*boldFont: xft:Hack:style=Bold:size=12:antialias=true:hinting=true
+URxvt*italicFont: xft:Hack:style=Italic:size=12:antialias=true:hinting=true
+URxvt*boldItalicFont: xft:Hack:style=Bold Italic:size=12:antialias=true:hinting=true
 URxvt*letterSpace: 0
 
 URxvt*depth: 32
@@ -55,7 +55,7 @@ URxvt*highlightColor: white
 
 !! URxvtFZF menu
 URxvtFZF*internalBorder: 10
-URxvtFZF*font: xft:Source Code Pro:size=16:antialias=true:hinting=true
-URxvtFZF*boldFont: xft:Source Code Pro:style=Bold:size=16:antialias=true:hinting=true
-URxvtFZF*italicFont: xft:Source Code Pro:style=Italic:size=16:antialias=true:hinting=true
-URxvtFZF*boldItalicFont: xft:Source Code Pro:style=Bold Italic:size=16:antialias=true:hinting=true
+URxvtFZF*font: xft:Hack:size=16:antialias=true:hinting=true
+URxvtFZF*boldFont: xft:Hack:style=Bold:size=16:antialias=true:hinting=true
+URxvtFZF*italicFont: xft:Hack:style=Italic:size=16:antialias=true:hinting=true
+URxvtFZF*boldItalicFont: xft:Hack:style=Bold Italic:size=16:antialias=true:hinting=true
