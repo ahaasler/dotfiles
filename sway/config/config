@@ -30,10 +30,10 @@ set $dropdownHeight 472
 set $dropdownX -$gaps
 set $dropdownY -$gaps
 # Your preferred terminal emulator
-set $term termite
+set $term kitty
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
-set $menu TERMINAL_COMMAND="termite -e" termite --name termite-menu -e ~/.config/sway/sway-launcher-desktop.sh
+set $menu TERMINAL_COMMAND="kitty" kitty --class kitty-menu -e ~/.config/sway/sway-launcher-desktop.sh
 set $menuHeight 290
 set $menuWidth 790
 # Default wallpaper
@@ -286,6 +286,14 @@ for_window [app_id="termite-menu"] {
 	focus [app_id="termite-menu"]
 }
 
+for_window [app_id="kitty-menu"] {
+	floating enable
+	border pixel 0
+	sticky enable
+	resize set $menuWidth $menuHeight
+	focus [app_id="kitty-menu"]
+}
+
 for_window [app_id="dropdown-terminal"] {
 	mark "terminal"
 }
@@ -308,6 +316,6 @@ include /etc/sway/config.d/*
 ### Starting apps
 #
 # Dropdown apps
-exec termite --name "dropdown-terminal"
+exec kitty --class "dropdown-terminal"
 # Windows transparency script
 exec python ~/.config/sway/inactive-windows-transparency.py
