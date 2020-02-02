@@ -27,7 +27,7 @@ export HISTFILE="$HOME/.zhistory"
 export SAVEHIST=$HISTSIZE
 
 # Remove extra space in right prompt
-export ZLE_RPROMPT_INDENT=0
+#export ZLE_RPROMPT_INDENT=0
 
 setopt ALL_EXPORT
 setopt HIST_IGNORE_DUPS
