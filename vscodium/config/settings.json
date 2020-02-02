@@ -5,6 +5,7 @@
         "statusBar.foreground" : "#bdbdbd"
     },
     "editor.fontFamily": "'Hack FC Ligatured', 'Hack', 'Source Code Pro', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontLigatures": true,
     "editor.renderWhitespace": "boundary",
     "editor.insertSpaces": false
 }
