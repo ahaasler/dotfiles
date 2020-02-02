@@ -33,7 +33,7 @@ set $dropdownY -$gaps
 set $term kitty
 # Your preferred application launcher
 # Note: it's recommended that you pass the final command to sway
-set $menu TERMINAL_COMMAND="kitty" kitty --class kitty-menu -e ~/.config/sway/sway-launcher-desktop.sh
+set $menu TERMINAL_COMMAND="kitty" kitty --class app-menu -e ~/.config/sway/sway-launcher-desktop.sh
 set $menuHeight 290
 set $menuWidth 790
 # Default wallpaper
@@ -270,28 +270,12 @@ input type:touchpad {
 ### Custom windows
 #
 # Floating menu
-for_window [class="URxvt" instance="URxvtFZF$"] {
+for_window [app_id="app-menu"] {
 	floating enable
 	border pixel 0
 	sticky enable
 	resize set $menuWidth $menuHeight
-	focus [class="URxvt" instance="URxvtFZF$"]
-}
-
-for_window [app_id="termite-menu"] {
-	floating enable
-	border pixel 0
-	sticky enable
-	resize set $menuWidth $menuHeight
-	focus [app_id="termite-menu"]
-}
-
-for_window [app_id="kitty-menu"] {
-	floating enable
-	border pixel 0
-	sticky enable
-	resize set $menuWidth $menuHeight
-	focus [app_id="kitty-menu"]
+	focus [app_id="app-menu"]
 }
 
 for_window [app_id="dropdown-terminal"] {
