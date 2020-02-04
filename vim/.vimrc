@@ -44,4 +44,5 @@ if &diff
 	map ]l :diffget LOCAL<CR>
 	map ]b :diffget BASE<CR>
 	map ]r :diffget REMOTE<CR>
+	set nospell
 endif
