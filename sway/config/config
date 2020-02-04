@@ -195,6 +195,8 @@ mouse_warping none
     # If there are multiple scratchpad windows, this command cycles through them.
     bindsym $mod+minus scratchpad show
 
+popup_during_fullscreen leave_fullscreen
+
 # Dropdown terminal
 bindsym $mod+t [con_mark="terminal"] focus output $dropdownDisplay, scratchpad show, resize set $dropdownWidth $dropdownHeight, move position $dropdownX $dropdownY
 
