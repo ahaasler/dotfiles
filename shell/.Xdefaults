@@ -47,7 +47,7 @@ URxvt*boldItalicFont: xft:Hack:style=Bold Italic:size=12:antialias=true:hinting=
 URxvt*letterSpace: 0
 
 URxvt*depth: 32
-URxvt*background: rgba:0000/0000/0200/c800
+URxvt*background: [80]#212121
 URxvt*foreground: white
 URxvt*highlightColor: white
 
