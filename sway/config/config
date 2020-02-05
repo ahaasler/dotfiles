@@ -40,6 +40,8 @@ set $menuWidth 790
 set $wallpaper /usr/share/backgrounds/sway/Sway_Wallpaper_Blue_1920x1080.png
 # Hostname variables overrides
 include ~/.config/sway/$(hostname)/variables
+# Default lock command
+set $lock swaylock -C ~/.config/sway/lock.config
 
 ### Output configuration
 #
@@ -228,10 +230,10 @@ bindsym $mod+r mode "resize"
 # System menu (logs you out of your Wayland session)
 set $modeSystem System - (l)ock | (e)xit | (s)uspend | (h)ibernate | (r)eboot | (S)hutdown
 mode "$modeSystem" {
-    bindsym l exec swaylock, mode "default"
+    bindsym l exec $lock, mode "default"
     bindsym e exit, mode "default"
-    bindsym s exec "swaylock & systemctl suspend", mode "default"
-    bindsym h exec "swaylock & systemctl hibernate", mode "default"
+    bindsym s exec "$lock & systemctl suspend", mode "default"
+    bindsym h exec "$lock & systemctl hibernate", mode "default"
     bindsym r exec systemctl reboot, mode "default"
     bindsym Shift+s exec systemctl poweroff, mode "default"
 
