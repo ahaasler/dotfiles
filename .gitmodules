@@ -137,3 +137,7 @@
 	path = fonts/hack
 	url = https://github.com/source-foundry/Hack.git
 	branch = master
+[submodule "sway/fader"]
+	path = sway/fader
+	url = https://github.com/ahaasler/swayfader.git
+	branch = master
