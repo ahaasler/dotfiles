@@ -312,4 +312,4 @@ include /etc/sway/config.d/*
 # Dropdown apps
 exec kitty --class "dropdown-terminal"
 # Windows transparency script
-exec python ~/.config/sway/inactive-windows-transparency.py
+exec python ~/.config/sway/swayfader.py
