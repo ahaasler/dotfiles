@@ -1,26 +1,30 @@
 #searchbox {
-	background: none;
-	border-color: #999;
-	color: #ccc
+	background: white;
+	border-color: #BDBDBD;
+	color: #212121;
+	font-size: 1.1em;
+	padding: .8em 2em;
 }
 #button {
 	background: none;
 	border-style: none;
 	box-shadow: none;
-	color: #999;
+	color: white;
+	font-size: 1.05em;
 }
 #button:hover {
-	background-color: rgba(255, 255, 255, 0.07);
+	background-color: rgba(255, 255, 255, 0.2);
 	color: #eee
 }
 #button:focus {
 	border-style: solid;
 	border-width: 1px;
-	border-color: rgba(255, 255, 255, 0.2)
+	border-color: #BDBDBD;
 }
 #separator {
-	background-color: rgba(200, 200, 200, 0.7);
+	background-color: #BDBDBD;
 }
 #prompt {
-	color: #999
+	color: #BDBDBD;
+	font-size: 1.3em;
 }
