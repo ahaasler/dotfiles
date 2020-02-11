@@ -5,7 +5,7 @@
 # Read `man 5 sway` for a complete reference.
 
 ### Appearance
-font pango:Source Sans Pro:FontAwesome 11
+font pango:Arimo 11
 
 ### Variables
 #
