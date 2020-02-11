@@ -313,3 +313,6 @@ include /etc/sway/config.d/*
 exec kitty --class "dropdown-terminal"
 # Windows transparency script
 exec python ~/.config/sway/swayfader.py
+
+# Start notification daemon
+exec mako
