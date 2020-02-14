@@ -4,7 +4,7 @@
 # Copy contents of a file
 function cbf() { cat "$1" | cb; }
 # Copy SSH public key
-alias cbssh="cbf ~/.ssh/id_rsa.pub"
+alias cbssh="cbf ~/.ssh/id_ed25519.pub"
 # Copy current working directory
 alias cbwd="pwd | cb"
 # Copy most recent command in bash history
