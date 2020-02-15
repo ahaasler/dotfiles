@@ -69,7 +69,9 @@ expandPath() {
 }
 
 # Author: Zach Holman <zach@zachholman.com>
-# License: MIT (licenses/holman-dotfiles.md)
+# Modifications: Adrian Haasler <dev@adrianhaasler.com>
+# - Canonicalize readlink
+# License: MIT (licenses/holman-dotfiles.md) and MIT (LICENSE) for modifications
 link_file () {
 	local src=$1 dst=$2 prepend=$3
 
@@ -82,9 +84,7 @@ link_file () {
 		if [ "$overwrite_all" == "false" ] && [ "$backup_all" == "false" ] && [ "$skip_all" == "false" ]
 		then
 
-			local currentSrc="$(readlink $dst)"
-
-			if [ "$currentSrc" == "$src" ]
+			if [ "$(readlink $dst)" == "$src" ] || [ "$(readlink -f $dst)" == "$src" ]
 			then
 
 				skip=true;
