@@ -10,7 +10,7 @@ export SDKMAN_DIR="$HOME/.sdkman"
 # Modifications: Adrian Haasler <dev@adrianhaasler.com>
 # - Use link type instead of normal file in find command
 # License: Apache (licenses/sdkman-sdkman-cli) and MIT (LICENSE) for modifications
-for f in $(find "${SDKMAN_DIR}/src" -type l -name 'sdkman-*' -exec basename {} \;); do
+for f in $(find "${SDKMAN_DIR}/src/" -type l -name 'sdkman-*' -exec basename {} \;); do
 	source "${SDKMAN_DIR}/src/${f}"
 done
 
@@ -22,7 +22,7 @@ done
 # Modifications: Adrian Haasler <dev@adrianhaasler.com>
 # - Use link type instead of normal file in find command
 # License: Apache (licenses/sdkman-sdkman-cli) and MIT (LICENSE) for modifications
-for f in $(find "${SDKMAN_DIR}/ext" -type l -name 'sdkman-*' -exec basename {} \;); do
+for f in $(find "${SDKMAN_DIR}/ext/" -type l -name 'sdkman-*' -exec basename {} \;); do
 	source "${SDKMAN_DIR}/ext/${f}"
 done
 unset f
