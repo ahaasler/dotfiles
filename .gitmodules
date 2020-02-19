@@ -141,3 +141,7 @@
 	path = sway/fader
 	url = https://github.com/ahaasler/swayfader.git
 	branch = master
+[submodule "tmux/remote-sessions"]
+	path = tmux/remote-sessions
+	url = https://github.com/ahaasler/tmux-remote-sessions.git
+	branch = master
