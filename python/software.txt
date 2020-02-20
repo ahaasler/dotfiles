@@ -2,4 +2,3 @@ distro
 ipython
 thefuck
 virtualenv
-virtualenvwrapper
