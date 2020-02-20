@@ -145,3 +145,7 @@
 	path = tmux/remote-sessions
 	url = https://github.com/ahaasler/tmux-remote-sessions.git
 	branch = master
+[submodule "python/pyenv-virtualenv"]
+	path = python/pyenv-virtualenv
+	url = https://github.com/pyenv/pyenv-virtualenv.git
+	branch = master
