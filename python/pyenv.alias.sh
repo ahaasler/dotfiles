@@ -1,0 +1,6 @@
+alias venvs='pyenv virtualenvs --skip-aliases --bare'
+alias venv='pyenv virtualenv'
+alias venva='pyenv activate'
+alias venvd='pyenv deactivate'
+alias venvdel='pyenv virtualenv-delete'
+alias venvrm='venvdel'
