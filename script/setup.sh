@@ -145,14 +145,92 @@ link_file () {
 	fi
 }
 
+# Author: Adrian Haasler <dev@adrianhaasler.com>
+# Based on: link_file() by Zach Holman <zach@zachholman.com>
+# License: MIT (licenses/holman-dotfiles.md) and MIT (LICENSE)
+copy_file () {
+	local src=$1 dst=$2 prepend=$3
+
+	local overwrite= backup= skip=
+	local action=
+
+	if [ -f "$dst" -o -d "$dst" -o -L "$dst" ]
+	then
+
+		if [ "$overwrite_all" == "false" ] && [ "$backup_all" == "false" ] && [ "$skip_all" == "false" ]
+		then
+
+			if cmp --silent "$dst" "$src"
+			then
+
+				skip=true;
+
+			else
+
+				user "File already exists: $dst ($(basename "$src")), what do you want to do?\n\
+				[s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all?"
+				read -n 1 action
+
+				case "$action" in
+					o )
+						overwrite=true;;
+					O )
+						overwrite_all=true;;
+					b )
+						backup=true;;
+					B )
+						backup_all=true;;
+					s )
+						skip=true;;
+					S )
+						skip_all=true;;
+					* )
+						;;
+				esac
+
+			fi
+
+		fi
+
+		overwrite=${overwrite:-$overwrite_all}
+		backup=${backup:-$backup_all}
+		skip=${skip:-$skip_all}
+
+		if [ "$overwrite" == "true" ]
+		then
+			$prepend rm -rf "$dst"
+			success "removed $dst"
+		fi
+
+		if [ "$backup" == "true" ]
+		then
+			$prepend mv "$dst" "${dst}.backup"
+			success "moved $dst to ${dst}.backup"
+		fi
+
+		if [ "$skip" == "true" ]
+		then
+			success "skipped $src"
+		fi
+	fi
+
+	if [ "$skip" != "true" ]	# "false" or empty
+	then
+		$prepend cp "$1" "$2"
+		success "copied $1 to $2"
+	fi
+}
+
 # Author: Zach Holman <zach@zachholman.com>
 # Modifications: Adrian Haasler <dev@adrianhaasler.com>
 # - Use empty file ended in .symlink to copy file with same name but without that ending
 # - Don't add dot by default in dst filename
 # - Make .git restriction in find command more precise (only .git folder)
 # - Move 'overwrite_all', 'backup_all' and 'skip_all' outside function
-# - Use file ended in .customlink to copy file with same name (without that ending) to the location defined inside the link file)
-# - Use file ended in .rootlink to copy as root the file with same name (without that ending) to the location defined inside the link file)
+# - Use file ended in .customlink to link file with same name (without that ending) to the location defined inside the link file)
+# - Use file ended in .customcopy to copy file with same name (without that ending) to the location defined inside the copy file)
+# - Use file ended in .rootlink to link as root the file with same name (without that ending) to the location defined inside the link file)
+# - Use file ended in .rootcopy to copy as root the file with same name (without that ending) to the location defined inside the link file)
 # - Exclude if folder
 # - Make base folder for search customizable
 # License: MIT (licenses/holman-dotfiles.md) and MIT (LICENSE) for modifications
@@ -174,6 +252,16 @@ install_dotfiles () {
 			mkdir -p $(dirname $dst)
 		fi
 		link_file "$src" "$dst"
+	done
+
+	for file in $(find -H "$base_folder" -maxdepth 3 -name '*.customcopy' -not -path '*/.git.customcopy' -not -path '*/.git/**' -not -path "$base_folder/if/**")
+	do
+		src="${file%.*}"
+		dst="$(expandPath $(head -n 1 $file))"
+		if [ ! -d "$(dirname $dst)" ]; then
+			mkdir -p $(dirname $dst)
+		fi
+		copy_file "$src" "$dst"
 	done
 
 	for folder in $(find -H "$base_folder" -maxdepth 3 -name '*.contentlink' -not -path '*/.git.contentlink' -not -path '*/.git/**' -not -path "$base_folder/if/**")
@@ -215,6 +303,17 @@ install_dotfiles () {
 			sudo mkdir -p $(dirname $dst)
 		fi
 		link_file "$src" "$dst" "sudo"
+	done
+
+	for file in $(find -H "$base_folder" -maxdepth 3 -name '*.rootcopy' -not -path '*/.git.rootcopy' -not -path '*/.git/**' -not -path "$base_folder/if/**")
+	do
+		src="${file%.*}"
+		dst="$(expandPath $(head -n 1 $file))"
+		info "root necessary to setup $dst"
+		if [ ! -d "$(dirname $dst)" ]; then
+			sudo mkdir -p $(dirname $dst)
+		fi
+		copy_file "$src" "$dst" "sudo"
 	done
 }
 
