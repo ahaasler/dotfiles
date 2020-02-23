@@ -1,4 +1,6 @@
-if hash sgtk-grid 2>/dev/null; then
+if hash wofi 2>/dev/null; then
+	wofi --show drun --allow-images --insensitive --prompt "Applications"
+elif hash sgtk-grid 2>/dev/null; then
 	sgtk-grid -t 60 -b 28 -o 0.8 -f
 elif hash kitty 2>/dev/null; then
 	TERMINAL_COMMAND="kitty" kitty --class app-menu -e ~/.config/sway/sway-launcher-desktop.sh
