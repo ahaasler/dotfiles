@@ -63,7 +63,7 @@ if (( $# )); then
 	img="$1"
 else
 	mkdir -p "$ssdir"
-	img=$(mktemp "${ssdir}/$(date +%Y-%m-%d_%T).XXX" --suffix=.png)
+	img=$(mktemp -u "${ssdir}/$(date +%Y-%m-%d_%T).XXX" --suffix=.png)
 fi
 
 # === TAKE SCREENSHOT ===
