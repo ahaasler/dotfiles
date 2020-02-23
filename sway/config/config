@@ -115,6 +115,9 @@ exec swayidle -w \
 #
     set $screenshot ~/.config/sway/scripts/screenshot.sh
 
+    # Screenshot menu
+    bindsym $mod+Print exec $screenshot -m
+
     # Take a screenshot
     bindsym Print exec $screenshot
 

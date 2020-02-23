@@ -16,6 +16,7 @@ Take a screenshot
 	-w    screenshot current active window
 	-s    screenshot selection
 	-d    screenshot display (default)
+	-m    screenshot menu
 	-h    show this help
 	FILE  destination for screenshot
 
@@ -24,15 +25,31 @@ or display by default.
 EOF
 }
 
+menu() {
+	options=( '1: display' '2: selection' '3: window' )
+
+	select_option() {
+		case $1 in
+			'1: display' ) echo 'd' ;;
+			'2: selection' ) echo 's' ;;
+			'3: window' ) echo 'w' ;;
+		esac
+	}
+
+	# starting wofi in dmenu mode
+	select_option "$(printf "%s\n" "${options[@]}" | wofi --dmenu -i --sort-order alphabetical -p 'Select screenshot mode')"
+}
+
 # === ENVIRONMENT VARIABLES ===
 ssdir=${SCREENSHOT_DIRECTORY:-$HOME/Pictures/Screenshots}
 
 # === GETOPTS ===
 # if no opt provided, don't shift
 mode=d
-while getopts ":dhsw" o; do
+while getopts ":dhswm" o; do
 	case "$o" in
 	[dsw]) mode="$o" ;;
+	m ) mode="$(menu)" ;;
 	h ) usage && exit 0 ;;
 	* ) usage && exit 1 ;;
 	esac
