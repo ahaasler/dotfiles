@@ -1,4 +1,10 @@
 #!/usr/bin/env bash
+
+# Author: xPMo & Adrian Haasler <dev@adrianhaasler.com>
+# Based on grim-wrapper.sh by xPMo (https://gitlab.com/gamma-neodots/neodots.guibin/-/blob/master/grim-wrapper.sh)
+# This script is inspired and was started based on the one from xPMo, but with modifications to my liking.
+# License: MIT (licenses/gamma-neodots-guibin) and MIT (LICENSE)
+
 IFS=$'\n'
 
 usage() {
@@ -19,19 +25,14 @@ EOF
 }
 
 # === ENVIRONMENT VARIABLES ===
-# using xdg-open is a good second guess
-# simply set $XIVIEWER in .xinitrc / .profile to change
-viewer=${XIVIEWER:-xdg-open}
-editor=${XIEDITOR:-gimp}
-tmpdir="${SCREENSHOT_TMPDIR:=${TMPDIR:=${XDG_RUNTIME_DIR:-/tmp}}}/screenshots"
 ssdir=${SCREENSHOT_DIRECTORY:-$HOME/Pictures/Screenshots}
 
 # === GETOPTS ===
 # if no opt provided, don't shift
-opt=d
+mode=d
 while getopts ":dhsw" o; do
 	case "$o" in
-	[dsw]) opt="$o" ;;
+	[dsw]) mode="$o" ;;
 	h ) usage && exit 0 ;;
 	* ) usage && exit 1 ;;
 	esac
@@ -44,12 +45,12 @@ if (( $# )); then
 	mkdir -p "$(dirname "$1")"
 	img="$1"
 else
-	mkdir -p "$tmpdir"
-	img=$(mktemp "${tmpdir}/$(date +%Y-%m-%d_%T).XXX" --suffix=.png)
+	mkdir -p "$ssdir"
+	img=$(mktemp "${ssdir}/$(date +%Y-%m-%d_%T).XXX" --suffix=.png)
 fi
 
 # === TAKE SCREENSHOT ===
-case $opt in # active window / selection / whole screen
+case $mode in # active window / selection / whole screen
 	w)
 		x="$(swaymsg -t get_tree | jq -r \
 			'.nodes[].nodes[]|select(.name!="__i3_scratch")|
@@ -61,26 +62,3 @@ case $opt in # active window / selection / whole screen
 	s) grim -g "$(slurp)" "$img" ;;
 	d) grim "$img" ;;
 esac
-
-# === TAKE ACTION ON FILE ===
-# in a loop, user may want to take many actions
-while
-action="$(zenity --title="[Grim] Took screenshot: $img" --width=600 --height=300 --list \
-	--column='Command' --column='Choose an action:' <<- EOF
-	wl-copy < "\$img"
-	Copy image to clipboard
-	rm "\$img"; break
-	Delete image and exit
-	$viewer "\$img"
-	View image with $viewer
-	$editor "\$img"
-	Edit image with $editor
-	mkdir -p "\$ssdir"; cp "\$img" "\$ssdir"
-	Save image to $ssdir
-	imgur -a "\$img"
-	Upload image to Imgur
-EOF
-)"
-do
-	eval "$action"
-done

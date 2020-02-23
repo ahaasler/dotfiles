@@ -111,6 +111,19 @@ exec swayidle -w \
     # Reload the configuration file
     bindsym $mod+Shift+c reload
 #
+# Screenshots:
+#
+    set $screenshot ~/.config/sway/scripts/screenshot.sh
+
+    # Take a screenshot
+    bindsym Print exec $screenshot
+
+    # Take a screenshot of a window
+    bindsym Alt+Print exec $screenshot -w
+
+    # Take a screenshot of a region
+    bindsym Shift+Print exec $screenshot -s
+#
 # Moving around:
 #
     # Move your focus around
