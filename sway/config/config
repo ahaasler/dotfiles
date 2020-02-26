@@ -328,3 +328,4 @@ exec wl-paste -t text --watch clipman store
 exec clipman restore
 
 bindsym $mod+h exec clipman pick -t wofi
+bindsym $mod+Shift+h exec clipman clear -t wofi
