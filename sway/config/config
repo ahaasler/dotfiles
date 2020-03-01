@@ -324,8 +324,7 @@ exec python ~/.config/sway/swayfader.py
 exec mako
 
 # Start clipboard manager
-exec wl-paste -t text --watch clipman store
-exec wl-paste -t text --watch xargs -0 -I % ~/.config/sway/scripts/clipboard-notify.sh %
+exec wl-paste -t text --watch ~/.config/sway/scripts/clipboard-add.sh
 exec clipman restore
 
 bindsym $mod+h exec clipman pick -t wofi -T'-i -p Select'
