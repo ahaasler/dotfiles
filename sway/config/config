@@ -286,12 +286,11 @@ input type:touchpad {
 ### Custom windows
 #
 # Floating menu
-for_window [app_id="app-menu"] {
+for_window [app_id="^.*-menu$"] {
 	floating enable
 	border pixel 0
 	sticky enable
 	resize set $menuWidth $menuHeight
-	focus [app_id="app-menu"]
 }
 
 for_window [app_id="dropdown-terminal"] {
