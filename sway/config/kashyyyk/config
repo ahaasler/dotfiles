@@ -1,2 +1,5 @@
 # Displays
 output eDP-1 resolution 1920x1080 position 0,0
+
+# Second monitor over the laptop
+output DP-1 resolution 1920x1080 position 0,-1080
