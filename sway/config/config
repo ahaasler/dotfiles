@@ -94,6 +94,7 @@ exec swayidle -w \
 #
     # Start a terminal
     bindsym $mod+Return exec tmux list-session -F\#S | ~/.config/sway/scripts/menu.sh "Pick tmux session" | xargs -0 -I '%' $term ~/.dotfiles.home/tmux/tmux-open.sh "%"
+    bindsym $mod+Shift+Return exec $term
 
     # Kill focused window
     bindsym $mod+Shift+q kill
