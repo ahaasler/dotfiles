@@ -316,7 +316,7 @@ include /etc/sway/config.d/*
 ### Starting apps
 #
 # Dropdown apps
-exec kitty --class "dropdown-terminal"
+exec kitty --class "dropdown-terminal" ~/.dotfiles.home/tmux/tmux-open.sh "dropdown"
 # Windows transparency script
 exec python ~/.config/sway/swayfader.py
 
