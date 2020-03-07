@@ -329,3 +329,6 @@ exec clipman restore
 
 bindsym $mod+h exec clipman pick -t wofi -T'-i -p Select'
 bindsym $mod+Shift+h exec clipman clear -t wofi -T'-i -p Clear'
+# Select with rotation
+bindsym $mod+F12 exec ~/.config/sway/scripts/clipboard-select.sh -p -t 1500 | wl-copy
+bindsym $mod+F11 exec ~/.config/sway/scripts/clipboard-select.sh -n -t 1500 | wl-copy
