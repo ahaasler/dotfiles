@@ -283,6 +283,9 @@ input type:touchpad {
 	natural_scroll enabled
 }
 
+# Cursor
+seat * hide_cursor 10000
+
 #
 ### Custom windows
 #
