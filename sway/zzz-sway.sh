@@ -9,7 +9,7 @@ if [[ "$(tty)" == '/dev/tty1' ]]; then
 	printf '   \e[1;39m                   |___/   \e[0m\n\n'
 	case $SHELL in
 		*/bash) if [ -f $HOME/.profile ]; then . $HOME/.profile; fi ;;
-		*/zsh) [ -f $HOME/.zprofile ] && . $HOME/.zprofile ;;
+		*/zsh) [ -f $HOME/.zprofile ] && ZSH_FORCE_PROFILE_LOAD=true . $HOME/.zprofile ;;
 		*) [ -f $HOME/.profile ] && . $HOME/.profile ;;
 	esac
 	export POWERLINE_CONFIG_OVERRIDES=""
