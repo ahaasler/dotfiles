@@ -1,8 +1,7 @@
 #!/bin/bash
-
-if [ ! -d "$HOME/.pyenv" ]; then
+if [ ! -h "$HOME/.pyenv/bin" ]; then
 	info 'creating pyenv folder'
-	if ( mkdir "$HOME/.pyenv" ) 2>&1 | while read line
+	if ( mkdir -p "$HOME/.pyenv" ) 2>&1 | while read line
 		do
 			debug "$line";
 		done
