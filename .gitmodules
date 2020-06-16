@@ -149,3 +149,7 @@
 	path = python/pyenv-virtualenv
 	url = https://github.com/pyenv/pyenv-virtualenv.git
 	branch = master
+[submodule "zsh/powerlevel10k"]
+	path = zsh/powerlevel10k
+	url = https://github.com/romkatv/powerlevel10k.git
+	branch = master
