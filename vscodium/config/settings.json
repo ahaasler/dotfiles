@@ -4,7 +4,7 @@
     "workbench.colorCustomizations": {
         "statusBar.foreground" : "#bdbdbd"
     },
-    "editor.fontFamily": "'Hack FC Ligatured', 'Hack', 'Source Code Pro', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontFamily": "'HackJBMLigatured Nerd Font', 'Hack FC Ligatured', 'Hack', 'Source Code Pro', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.fontLigatures": true,
     "editor.renderWhitespace": "boundary",
     "editor.insertSpaces": false
