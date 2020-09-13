@@ -29,20 +29,20 @@
   autoload -Uz is-at-least && is-at-least 5.1 || return
 
   # Custom space segment
-  function prompt_space() {
+  function prompt_tasty_space() {
     p10k segment -t " "
   }
 
   # Custom instant space segment
-  function instant_prompt_space() {
-    prompt_space
+  function instant_prompt_tasty_space() {
+    prompt_tasty_space
   }
 
   # The list of segments shown on the left. Fill it with the most important segments.
   typeset -g POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
     # os_icon               # os identifier
     dir                     # current directory
-    space_joined            # space character, joined to avoid subsegment separator
+    tasty_space_joined      # space character, joined to avoid subsegment separator
     prompt_char_joined      # prompt symbol, joined to avoid subsegment separator, prompt is the same char as subsegment separator
   )
 
@@ -51,7 +51,7 @@
   # automatically hidden when the input line reaches it. Right prompt above the
   # last prompt line gets hidden if it would overlap with left prompt.
   typeset -g POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
-    space                   # space character, to force first real element to start with subsegment separator
+    tasty_space             # space character, to force first real element to start with subsegment separator
     status                  # exit code of the last command
     command_execution_time  # duration of the last command
     background_jobs         # presence of background jobs
