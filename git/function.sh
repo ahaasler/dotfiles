@@ -1,12 +1,12 @@
 gclcd() {
-	gcl "$1" && cd "$(basename "$1" | sed 's/\.git//g')"
+	git clone "$1" && cd "$(basename "$1" | sed 's/\.git//g')"
 }
 gd^() {
-	gd $1^ $1 ${@:2}
+	git diff $1^ $1 ${@:2}
 }
 gdt^() {
-	gdt $1^ $1 ${@:2}
+	git difftool $1^ $1 ${@:2}
 }
 gtam() {
-	gta "$1" -m "$2"
+	git tag -a "$1" -m "$2"
 }
