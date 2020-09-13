@@ -28,9 +28,14 @@
   # Zsh >= 5.1 is required.
   autoload -Uz is-at-least && is-at-least 5.1 || return
 
-  # Custom segments
-  prompt_space() {
+  # Custom space segment
+  function prompt_space() {
     p10k segment -t " "
+  }
+
+  # Custom instant space segment
+  function instant_prompt_space() {
+    prompt_space
   }
 
   # The list of segments shown on the left. Fill it with the most important segments.
