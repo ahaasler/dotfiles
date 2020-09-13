@@ -268,8 +268,8 @@ install_dotfiles () {
 	do
 		src="${folder%.*}"
 		dst="$(expandPath $(head -n 1 $folder))"
-		if [ ! -d "$(dirname $dst)" ]; then
-			mkdir -p $(dirname $dst)
+		if [ ! -d "$dst" ]; then
+			mkdir -p $dst
 		fi
 		for file in $(ls -A1 $src)
 		do
