@@ -153,3 +153,7 @@
 	path = zsh/powerlevel10k
 	url = https://github.com/romkatv/powerlevel10k.git
 	branch = master
+[submodule "vim/.vim/bundle/hexokinase"]
+	path = vim/.vim/bundle/hexokinase
+	url = https://github.com/RRethy/vim-hexokinase.git
+	branch = master

@@ -4,6 +4,20 @@ set encoding=utf-8
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
+
+" Display colors
+if executable('go')
+	let g:Hexokinase_refreshEvents = ['BufWrite', 'BufRead', 'TextChanged', 'TextChangedI']
+	let g:Hexokinase_ftEnabled = ['conf', 'css', 'html']
+else
+	let Hexokinase_v2 = 0
+	let g:Hexokinase_refreshEvents = []
+	autocmd BufWrite,BufRead,TextChanged,TextChangedI *.conf,*.css,*.html HexokinaseRefresh
+endif
+let g:Hexokinase_highlighters = ['foregroundfull', 'sign_column']
+let g:Hexokinase_signIcon = '❯'
+let g:Hexokinase_optInPatterns = ['full_hex', 'triple_hex', 'rgb', 'rgba']
+
 let java_mark_braces_in_parens_as_errors=1
 let java_highlight_all=1
 let java_highlight_debug=1
@@ -22,6 +36,7 @@ set t_ZR=[23m
 set spell spelllang=en_us
 let g:material_style='dark'
 set background=dark
+autocmd ColorScheme * highlight! link SignColumn LineNr
 colorscheme vim-material-tasty
 hi Normal guibg=NONE ctermbg=NONE
 set number
