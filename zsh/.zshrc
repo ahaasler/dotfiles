@@ -20,6 +20,8 @@ bindkey "^[[1~" beginning-of-line
 bindkey "^[[4~" end-of-line
 bindkey "^[OC" forward-word
 bindkey "^[OD" backward-word
+bindkey "^[[1;5C" forward-word
+bindkey "^[[1;5D" backward-word
 bindkey "^[[3~" delete-char
 
 # Enable completion
