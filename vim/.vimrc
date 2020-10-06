@@ -61,3 +61,16 @@ if &diff
 	map ]r :diffget REMOTE<CR>
 	set nospell
 endif
+
+" Show diff when committing
+function! s:add_diff_to_commit_message() abort
+	let diff=systemlist('echo "# ALL LINES BELOW THIS ONE WILL BE REMOVED\n#"; git diff --cached')
+	execute append(line('$'), diff)
+endfunction
+function! s:remove_diff_from_commit_message() abort
+	execute "normal gg"
+	execute "/ALL LINES BELOW THIS ONE WILL BE REMOVED"
+	execute "normal! dG"
+endfunction
+autocmd BufRead */.git/COMMIT_EDITMSG call s:add_diff_to_commit_message()
+autocmd BufWritePre */.git/COMMIT_EDITMSG call s:remove_diff_from_commit_message()
