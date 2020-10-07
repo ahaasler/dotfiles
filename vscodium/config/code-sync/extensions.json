@@ -1,0 +1,15 @@
+{
+    "extensions": [
+        "dunstontc.viml",
+        "Equinusocio.vsc-community-material-theme",
+        "Equinusocio.vsc-material-theme",
+        "equinusocio.vsc-material-theme-icons",
+        "golf1052.code-sync",
+        "lixquid.calculator",
+        "mrmlnc.vscode-remark",
+        "naumovs.color-highlight",
+        "PKief.material-icon-theme",
+        "wmaurer.change-case",
+        "zokugun.explicit-folding"
+    ]
+}

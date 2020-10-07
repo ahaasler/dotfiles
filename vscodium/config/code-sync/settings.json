@@ -2,7 +2,7 @@
     "workbench.colorTheme": "Material Theme Darker High Contrast",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.colorCustomizations": {
-        "statusBar.foreground" : "#bdbdbd"
+        "statusBar.foreground": "#bdbdbd"
     },
     "editor.fontFamily": "'HackJBMLigatured Nerd Font', 'Hack FC Ligatured', 'Hack', 'Source Code Pro', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.fontLigatures": true,
