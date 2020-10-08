@@ -4,6 +4,11 @@
     "workbench.colorCustomizations": {
         "statusBar.foreground": "#bdbdbd"
     },
+    "editor.tokenColorCustomizations": {
+        "[Community Material Theme Darker High Contrast]": {
+            "comments": "#757575"
+        }
+    },
     "editor.fontFamily": "'HackJBMLigatured Nerd Font', 'Hack FC Ligatured', 'Hack', 'Source Code Pro', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.fontLigatures": true,
     "editor.renderWhitespace": "boundary",
