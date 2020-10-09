@@ -2,7 +2,23 @@
     "workbench.colorTheme": "Community Material Theme Darker High Contrast",
     "workbench.iconTheme": "material-icon-theme",
     "workbench.colorCustomizations": {
-        "statusBar.foreground": "#bdbdbd"
+        "statusBar.foreground": "#bdbdbd",
+        "terminal.ansiBlack": "#212121",
+        "terminal.ansiBrightBlack": "#757575",
+        "terminal.ansiRed": "#f07178",
+        "terminal.ansiBrightRed": "#e53935",
+        "terminal.ansiGreen": "#c3e88d",
+        "terminal.ansiBrightGreen": "#82a550",
+        "terminal.ansiYellow": "#ffcb6b",
+        "terminal.ansiBrightYellow": "#ffad13",
+        "terminal.ansiBlue": "#82aaff",
+        "terminal.ansiBrightBlue": "#6182b8",
+        "terminal.ansiMagenta": "#c792ea",
+        "terminal.ansiBrightMagenta": "#7c4dff",
+        "terminal.ansiCyan": "#89ddff",
+        "terminal.ansiBrightCyan": "#39adb5",
+        "terminal.ansiWhite": "#eeffff",
+        "terminal.ansiBrightWhite": "#ffffff"
     },
     "editor.tokenColorCustomizations": {
         "[Community Material Theme Darker High Contrast]": {
