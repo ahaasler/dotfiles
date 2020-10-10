@@ -24,7 +24,8 @@ if [ -d "$DOTFILES_HOME/.git" ]; then
 		# Get latest changes
 		git pull 2>&1 | while read line; do debug "$line"; done &&
 		# Update submodules to latest dotfiles pointer
-		git submodule foreach git fetch --tags 2>&1 | while read line; do debug "$line"; done
+		git submodule foreach --recursive 'git reset HEAD . || :' 2>&1 | while read line; do debug "$line"; done
+		git submodule foreach --recursive 'git checkout -- . || :' 2>&1 | while read line; do debug "$line"; done
 		git submodule update --init --recursive 2>&1 | while read line; do debug "$line"; done
 	)
 else
