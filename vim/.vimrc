@@ -8,11 +8,11 @@ filetype plugin indent on
 " Display colors
 if executable('go')
 	let g:Hexokinase_refreshEvents = ['BufWrite', 'BufRead', 'TextChanged', 'TextChangedI']
-	let g:Hexokinase_ftEnabled = ['conf', 'css', 'html']
+	let g:Hexokinase_ftEnabled = ['conf', 'css', 'html', 'json']
 else
 	let Hexokinase_v2 = 0
 	let g:Hexokinase_refreshEvents = []
-	autocmd BufWrite,BufRead,TextChanged,TextChangedI *.conf,*.css,*.html HexokinaseRefresh
+	autocmd BufWrite,BufRead,TextChanged,TextChangedI *.conf,*.css,*.html,*.json HexokinaseRefresh
 endif
 let g:Hexokinase_highlighters = ['foregroundfull', 'sign_column']
 let g:Hexokinase_signIcon = '❯'
