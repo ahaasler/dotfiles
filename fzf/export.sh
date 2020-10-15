@@ -1,6 +1,6 @@
 export FZF_DEFAULT_OPTS=$FZF_DEFAULT_OPTS'
  --prompt "❯ " --pointer "❯" --marker "❯"
- --color "fg:7,bg:-1,hl:2"
- --color "fg+:7,bg+:-1,hl+:2"
- --color "info:3,prompt:6,pointer:1"
- --color "marker:1,spinner:2,header:4"'
+ --color "fg:#eeffff,bg:-1,hl:#c3e88d"
+ --color "fg+:#eeffff,bg+:-1,hl+:#c3e88d"
+ --color "info:#ffcb6b,prompt:#89ddff,pointer:#f07178"
+ --color "marker:#f07178,spinner:#c3e88d,header:#82aaff"'
