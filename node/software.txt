@@ -3,5 +3,7 @@ empty-trash-cli
 grunt
 gulp
 json-diff
+pnpm
 trash-cli
 underscore-cli
+yarn
