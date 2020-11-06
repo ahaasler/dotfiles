@@ -1,0 +1,1 @@
+export NODE_PACKAGE_MANAGER=pnpm
