@@ -312,12 +312,20 @@ set $dropdownConfig {
 for_window [instance="^dropdown.*$"] $dropdownConfig
 for_window [app_id="^dropdown.*$"] $dropdownConfig
 
+for_window [title="Ulauncher Preferences"] floating enable
+for_window [app_id="^.*ulauncher.*$"] border none
+
+
 include ~/.config/sway/$(hostname)/*
 include /etc/sway/config.d/*
 
 #
 ### Starting apps
 #
+
+# Start Ulauncher
+exec ulauncher --hide-window
+
 # Dropdown apps
 exec kitty --class "dropdown-terminal" ~/.dotfiles.home/tmux/tmux-open.sh "dropdown"
 # Windows transparency script

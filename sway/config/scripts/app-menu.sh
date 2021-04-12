@@ -1,4 +1,6 @@
-if hash wofi 2>/dev/null; then
+if hash ulauncher 2>/dev/null; then
+	ulauncher-toggle
+elif hash wofi 2>/dev/null; then
 	wofi --show drun --allow-images --insensitive --prompt "Applications"
 elif hash sgtk-grid 2>/dev/null; then
 	sgtk-grid -t 60 -b 28 -o 0.8 -f
