@@ -8,9 +8,6 @@
 # If not running in a login shell, source profile
 shopt -q login_shell || source ~/.profile
 
-# Start tmux if conditions are met
-source $DOTFILES_HOME/tmux/start.sh
-
 # Use leftonly theme for powerline
 export POWERLINE_CONFIG_OVERRIDES=ext.shell.theme=default_leftonly
 

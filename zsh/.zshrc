@@ -7,11 +7,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# Start tmux if conditions are met
-emulate sh
-source $DOTFILES_HOME/tmux/start.sh
-emulate zsh
-
 # Powerlevel10k
 source ~/.dotfiles.home/zsh/powerlevel10k/powerlevel10k.zsh-theme
 
