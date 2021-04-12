@@ -157,3 +157,7 @@
 	path = vim/.vim/bundle/hexokinase
 	url = https://github.com/RRethy/vim-hexokinase.git
 	branch = master
+[submodule "shell/asdf"]
+	path = shell/asdf
+	url = https://github.com/asdf-vm/asdf.git
+	branch = master
