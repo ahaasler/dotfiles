@@ -1,0 +1,15 @@
+[Unit]
+Description=Mount deimos fs
+Requires=systemd-networkd.service
+After=network-online.target systemd-resolved.service
+Wants=network-online.target systemd-resolved.service
+
+[Mount]
+What=m2m@deimos:/GLOBALM2M
+Where=/mnt/deimos
+Options=_netdev,allow_other,reconnect,x-systemd.automount,StrictHostKeyChecking=no,follow_symlinks
+Type=fuse.sshfs
+TimeoutSec=30
+
+[Install]
+WantedBy=multi-user.target
