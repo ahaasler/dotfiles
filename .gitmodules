@@ -161,3 +161,7 @@
 	path = shell/asdf
 	url = https://github.com/asdf-vm/asdf.git
 	branch = master
+[submodule "ulauncher/extensions/jetbrains"]
+	path = ulauncher/extensions/jetbrains
+	url = https://github.com/brpaz/ulauncher-jetbrains.git
+	branch = master
