@@ -51,9 +51,13 @@ window#waybar.left > box {
 	border-top-right-radius: 10px;
 }
 
+#workspaces {
+	margin-right: 10px;
+}
+
 #workspaces button {
 	color: @secondary;
-	padding: 0;
+	padding: 5px;
 }
 
 #workspaces button.focused {
