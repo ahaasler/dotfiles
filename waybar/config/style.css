@@ -100,7 +100,9 @@ window#waybar.left > box {
 	color: @error;
 }
 
-#network.disconnected {
+#network.linked,
+#network.disconnected,
+#network.disabled {
 	color: @secondary;
 }
 
