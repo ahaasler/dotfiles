@@ -9,7 +9,7 @@
 * {
 	border: none;
 	border-radius: 0;
-	font-family: Arimo, Helvetica, Arial, sans-serif, "FontAwesome 5 Free";
+	font-family: Arimo, Helvetica, Arial, sans-serif, "HackJBMLigatured Nerd Font", "FontAwesome 5 Free";
 	font-size: 14px;
 	font-weight: bold;
 	min-height: 0;
@@ -98,6 +98,21 @@ window#waybar.left > box {
 
 #battery.critical:not(.charging) {
 	color: @error;
+}
+
+@keyframes blink {
+	to {
+		color: inherit;
+	}
+}
+
+#battery.danger:not(.charging) {
+	color: @error;
+	animation-name: blink;
+	animation-duration: 0.2s;
+	animation-timing-function: linear;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
 }
 
 #network.linked,

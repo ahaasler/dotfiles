@@ -92,15 +92,16 @@
 		"states": {
 			// "good": 95,
 			"warning": 30,
-			"critical": 15
+			"critical": 15,
+			"danger": 7
 		},
-		"format": "{capacity}% {icon}",
-		"format-charging": "{capacity}% ",
-		"format-plugged": "{capacity}% ",
-		"format-alt": "{time} {icon}",
-		// "format-good": "", // An empty format will hide the module
-		// "format-full": "",
-		"format-icons": ["", "", "", "", ""]
+		"format": "<big>{icon}</big>",
+		"format-danger": "{capacity}% <big>{icon}</big>",
+		"format-charging": "{capacity}% <big></big>",
+		"format-plugged": "<big>ﮣ</big>",
+		"format-alt": "{capacity}% <big>{icon}</big>",
+		"format-icons": ["", "", "", "", "", "", "", "", "", "", ""],
+		"tooltip-format": "{capacity}% - {timeTo}"
 	},
 	"battery#bat2": {
 		"bat": "BAT2"
