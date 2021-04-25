@@ -69,8 +69,12 @@
 		"tooltip-format": "<big><big><big>{:%d %B, %Y}</big>\n\n<tt>{calendar}</tt></big></big>"
 	},
 	"cpu": {
-		"format": "{usage}% ",
-		"tooltip": false
+		"states": {
+			"danger": 90,
+			"critical": 70,
+			"warning": 50
+		},
+		"format": "<big>﬙</big>"
 	},
 	"memory": {
 		"format": "{}% "
