@@ -108,16 +108,16 @@
 	},
 	"network": {
 		// "interface": "wlp2*", // (Optional) To force the use of this interface
-		"format-wifi": "",
-		"tooltip-format-wifi": "{essid} ({signalStrength}%) \n{ifname}: {ipaddr}/{cidr}\n{bandwidthDownBits}  / {bandwidthUpBits} ",
-		"format-ethernet": "",
-		"tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr} \n{bandwidthDownBits}  / {bandwidthUpBits} ",
-		"format-linked": "",
-		"tooltip-format-linked": "{ifname} (No IP) ",
-		"format-disabled": "",
-		"tooltip-format-disabled": "Disabled ",
-		"format-disconnected": "",
-		"tooltip-format-disconnected": "Disconnected ",
+		"format-wifi": "<big>直</big>",
+		"tooltip-format-wifi": "{essid} ({signalStrength}%) 直\n{ifname}: {ipaddr}/{cidr}\n{bandwidthDownBits}  / {bandwidthUpBits} 祝",
+		"format-ethernet": "<big></big>",
+		"tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr} \n{bandwidthDownBits}  / {bandwidthUpBits} 祝",
+		"format-linked": "<big></big>",
+		"tooltip-format-linked": "{ifname} (No IP) ",
+		"format-disabled": "<big>睊</big>",
+		"tooltip-format-disabled": "Disabled ",
+		"format-disconnected": "<big>睊</big>",
+		"tooltip-format-disconnected": "Disconnected ",
 		"tooltip-format": "{ifname}: {ipaddr}/{cidr}"
 	},
 	"pulseaudio": {
