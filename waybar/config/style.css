@@ -15,6 +15,18 @@
 	min-height: 0;
 }
 
+@keyframes blink {
+	to {
+		color: inherit;
+	}
+}
+
+@keyframes blink-warn {
+	to {
+		color: @warn;
+	}
+}
+
 window#waybar {
 	background-color: transparent;
 	color: @text;
@@ -94,21 +106,20 @@ window#waybar.left > box {
 
 #battery.charging {
 	color: @warn;
+	animation-name: blink;
+	animation-duration: 0.5s;
+	animation-timing-function: ease-in;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
 }
 
 #battery.critical:not(.charging) {
 	color: @error;
 }
 
-@keyframes blink {
-	to {
-		color: @warn;
-	}
-}
-
 #battery.danger:not(.charging) {
 	color: @error;
-	animation-name: blink;
+	animation-name: blink-warn;
 	animation-duration: 0.2s;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
@@ -117,7 +128,7 @@ window#waybar.left > box {
 
 #cpu.danger {
 	color: @error;
-	animation-name: blink;
+	animation-name: blink-warn;
 	animation-duration: 0.2s;
 	animation-timing-function: linear;
 	animation-iteration-count: infinite;
