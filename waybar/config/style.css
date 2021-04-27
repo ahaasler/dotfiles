@@ -104,6 +104,23 @@ window#waybar.left > box {
 	margin: 0 4px;
 }
 
+.danger {
+	color: @error;
+	animation-name: blink-warn;
+	animation-duration: 0.2s;
+	animation-timing-function: ease-in;
+	animation-iteration-count: infinite;
+	animation-direction: alternate;
+}
+
+.critical {
+	color: @error;
+}
+
+.warning {
+	color: @warn;
+}
+
 #battery.charging {
 	color: @warn;
 	animation-name: blink;
@@ -111,36 +128,6 @@ window#waybar.left > box {
 	animation-timing-function: ease-in;
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
-}
-
-#battery.critical:not(.charging) {
-	color: @error;
-}
-
-#battery.danger:not(.charging) {
-	color: @error;
-	animation-name: blink-warn;
-	animation-duration: 0.2s;
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
-}
-
-#cpu.danger {
-	color: @error;
-	animation-name: blink-warn;
-	animation-duration: 0.2s;
-	animation-timing-function: linear;
-	animation-iteration-count: infinite;
-	animation-direction: alternate;
-}
-
-#cpu.critical {
-	color: @error;
-}
-
-#cpu.warning {
-	color: @warn;
 }
 
 #network.linked,
@@ -151,10 +138,6 @@ window#waybar.left > box {
 
 #pulseaudio.muted {
 	color: @secondary;
-}
-
-#temperature.critical {
-	color: @error;
 }
 
 #idle_inhibitor {
