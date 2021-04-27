@@ -77,7 +77,13 @@
 		"format": "<big>﬙</big>"
 	},
 	"memory": {
-		"format": "{}% "
+		"states": {
+			"danger": 95,
+			"critical": 90,
+			"warning" : 70
+		},
+		"format": "<big></big>",
+		"tooltip-format": "{percentage}% - {used:0.1f}G/{total:0.1f}G"
 	},
 	"temperature": {
 		// "thermal-zone": 2,
