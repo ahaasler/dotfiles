@@ -1,16 +1,5 @@
 #compdef workon
 
-_venvs() {
-	local -a venvs
-	venvs=($(pyenv virtualenvs --bare 2>/dev/null))
-	compadd "$@" -a venvs
-}
-
-_workon() {
-	_arguments -C \
-		'*:virtualenvs:_venvs'
-}
-
-_workon "$@"
+# TODO with asdf
 
 # vim: ft=zsh:

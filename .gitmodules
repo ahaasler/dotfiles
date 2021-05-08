@@ -129,10 +129,6 @@
 	path = sway/launcher-desktop
 	url = https://github.com/Biont/sway-launcher-desktop.git
 	branch = master
-[submodule "python/pyenv"]
-	path = python/pyenv
-	url = https://github.com/pyenv/pyenv.git
-	branch = master
 [submodule "fonts/hack"]
 	path = fonts/hack
 	url = https://github.com/source-foundry/Hack.git
@@ -144,10 +140,6 @@
 [submodule "tmux/remote-sessions"]
 	path = tmux/remote-sessions
 	url = https://github.com/ahaasler/tmux-remote-sessions.git
-	branch = master
-[submodule "python/pyenv-virtualenv"]
-	path = python/pyenv-virtualenv
-	url = https://github.com/pyenv/pyenv-virtualenv.git
 	branch = master
 [submodule "zsh/powerlevel10k"]
 	path = zsh/powerlevel10k
