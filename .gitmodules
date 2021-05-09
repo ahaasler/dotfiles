@@ -157,3 +157,7 @@
 	path = ulauncher/extensions/jetbrains
 	url = https://github.com/brpaz/ulauncher-jetbrains.git
 	branch = master
+[submodule "python/asdf-plugin"]
+	path = python/asdf-plugin
+	url = https://github.com/danhper/asdf-python.git
+	branch = master
