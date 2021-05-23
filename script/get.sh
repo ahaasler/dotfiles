@@ -11,7 +11,7 @@ debug=false
 git=false
 
 # Functions
-source <(curl -skL https://raw.githubusercontent.com/ahaasler/dotfiles/master/script/function/log.sh)
+source <(curl -skL https://raw.githubusercontent.com/ahaasler/dotfiles/HEAD/script/function/log.sh)
 
 home="$HOME/.dotfiles"
 
