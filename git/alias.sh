@@ -1,3 +1,4 @@
+hash hub 2>/dev/null && eval "$(hub alias -s)"
 alias gi=git
 alias many=git
 alias much=git

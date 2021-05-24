@@ -1,5 +1,7 @@
 gclcd() {
-	git clone "$1" && cd "$(basename "$1" | sed 's/\.git//g')"
+	cmd=git
+	hash hub 2>/dev/null && cmd=hub
+	$cmd clone "$1" && cd "$(basename "$1" | sed 's/\.git//g')"
 }
 gd^() {
 	git diff $1^ $1 ${@:2}
