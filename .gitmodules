@@ -161,3 +161,7 @@
 	path = python/asdf-plugin
 	url = https://github.com/danhper/asdf-python.git
 	branch = master
+[submodule "java/asdf-plugin"]
+	path = java/asdf-plugin
+	url = https://github.com/halcyon/asdf-java.git
+	branch = master
