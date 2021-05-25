@@ -165,3 +165,7 @@
 	path = java/asdf-plugin
 	url = https://github.com/halcyon/asdf-java.git
 	branch = master
+[submodule "java/asdf-maven-plugin"]
+	path = java/asdf-maven-plugin
+	url = https://github.com/halcyon/asdf-maven.git
+	branch = master
