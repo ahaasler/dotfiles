@@ -1,0 +1,9 @@
+#compdef deactivate
+
+typeset -A opt_args
+
+_arguments -C \
+	'0:' \
+&& ret=0
+
+# vim: ft=zsh:

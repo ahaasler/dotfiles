@@ -3,11 +3,11 @@ function is_python_version() {
 }
 
 function is_python_version_installed() {
-	asdf list python | grep -e "^ *$1 *$" &> /dev/null
+	asdf list python &> /dev/null | grep -e "^ *$1 *$" &> /dev/null
 }
 
 function is_python_version_available() {
-	asdf list all python | grep -e "^ *$1 *\$" &> /dev/null
+	asdf list all python &> /dev/null | grep -e "^ *$1 *\$" &> /dev/null
 }
 
 function venv() {

@@ -1,0 +1,19 @@
+#compdef venva workon=venva venvdel=venva
+
+typeset -A opt_args
+
+_arguments -C \
+	'1:venvs:->venvs' \
+&& ret=0
+
+case "$state" in
+	(venvs)
+		local venvs=()
+		find -H ~/.local/share/venvs -mindepth 1 -maxdepth 1 -type d | while read venv; do
+			venvs+=("$(basename $venv):$("$venv"/bin/python --version)")
+		done
+		_describe -t venvs 'python venvs' venvs && ret=0
+	;;
+esac
+
+# vim: ft=zsh:

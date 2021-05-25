@@ -1,0 +1,30 @@
+#compdef venv
+
+typeset -A opt_args
+
+_arguments -C \
+	'1:args:->args' \
+	'2:args:->args' \
+&& ret=0
+
+case "$state" in
+	(args)
+		if is_python_version "$line[1]"; then
+			_arguments \
+				'*: :_guard "^-*" venv name'
+		else
+			local installed=()
+			asdf list python &> /dev/null | while read version; do
+				installed+=("${version}")
+			done
+			local available=()
+			asdf list all python &> /dev/null | grep -v -x -f <(asdf list python | awk '{$1=$1};1') | while read version; do
+				available+=("${version}")
+			done
+			_describe -t installed 'installed versions' installed && ret=0
+			_describe -t available 'available versions' available && ret=0
+		fi
+	;;
+esac
+
+# vim: ft=zsh:
