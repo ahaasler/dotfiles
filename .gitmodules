@@ -166,3 +166,7 @@
 	path = java/asdf-maven-plugin
 	url = https://github.com/halcyon/asdf-maven.git
 	branch = master
+[submodule "ulauncher/extensions/tmux"]
+	path = ulauncher/extensions/tmux
+	url = https://github.com/ahaasler/ulauncher-tmux.git
+	branch = main
