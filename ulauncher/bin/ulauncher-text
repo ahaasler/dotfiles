@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+ulauncher-toggle
+if hash ydotool 2>/dev/null; then
+	ydotool sleep 100 , type "$1"
+else
+	sleep 0.1
+	xte "str $1"
+fi
