@@ -323,6 +323,7 @@ for_window [app_id="^dropdown.*$"] $dropdownConfig
 for_window [title="Ulauncher Preferences"] floating enable
 for_window [app_id="^.*ulauncher.*$"] border none
 
+for_window [title="Firefox .* Sharing Indicator"] kill
 
 include ~/.config/sway/$(hostname)/*
 include /etc/sway/config.d/*
