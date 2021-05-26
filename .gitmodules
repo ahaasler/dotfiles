@@ -34,9 +34,6 @@
 	path = node/nvm
 	url = https://github.com/creationix/nvm
 	branch = master
-[submodule "sdk/sdkman"]
-	path = sdk/sdkman
-	url = https://github.com/sdkman/sdkman-cli
 [submodule "git/pommerge"]
 	path = git/pommerge
 	url = https://github.com/ralfth/pom-merge-driver

@@ -1,1 +1,0 @@
-../../sdkman/src/main/bash/sdkman-offline.sh
