@@ -13,5 +13,6 @@ if [[ "$(tty)" == '/dev/tty1' ]]; then
 		*) [ -f $HOME/.profile ] && . $HOME/.profile ;;
 	esac
 	export POWERLINE_CONFIG_OVERRIDES=""
+	export XDG_CURRENT_DESKTOP=sway
 	exec sway 2> /tmp/sway.log
 fi
