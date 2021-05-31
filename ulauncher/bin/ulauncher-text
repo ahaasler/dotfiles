@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-ulauncher-toggle
+ulauncher-toggle 2>&1 | grep 'The name net.launchpad.ulauncher was not provided by any .service files' && exit
 if hash ydotool 2>/dev/null; then
 	ydotool sleep 100 , type "$1"
 else
