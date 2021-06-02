@@ -333,7 +333,7 @@ include /etc/sway/config.d/*
 #
 
 # Start Ulauncher
-exec ulauncher --hide-window
+exec_always ulauncher --hide-window
 
 # Dropdown apps
 exec kitty --class "dropdown-terminal" ~/.dotfiles.home/tmux/tmux-open.sh "dropdown"
