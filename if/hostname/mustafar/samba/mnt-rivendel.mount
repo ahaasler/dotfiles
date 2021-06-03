@@ -1,13 +1,13 @@
 [Unit]
-Description=Mount rivendel/usr at boot
+Description=Mount nas/rivendel
 Requires=systemd-networkd.service
 After=network-online.target systemd-resolved.service
 Wants=network-online.target systemd-resolved.service
 
 [Mount]
-What=//rivendel/usr
-Where=/mnt/rivendel/usr
-Options=credentials=/etc/samba/creds/rivendel,iocharset=utf8,rw,x-systemd.automount,vers=1.0
+What=//nas/rivendel
+Where=/mnt/rivendel
+Options=credentials=/etc/samba/creds/nas,iocharset=utf8,rw,x-systemd.automount
 Type=cifs
 TimeoutSec=30
 
