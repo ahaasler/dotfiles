@@ -2,10 +2,12 @@
     "extensions": [
         "dunstontc.viml",
         "Equinusocio.vsc-community-material-theme",
+        "golang.go",
         "golf1052.code-sync",
         "lixquid.calculator",
         "mrmlnc.vscode-remark",
         "naumovs.color-highlight",
+        "huntertran.auto-markdown-toc",
         "PKief.material-icon-theme",
         "timonwong.shellcheck",
         "wmaurer.change-case",
