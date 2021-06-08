@@ -25,7 +25,7 @@
             "comments": "#757575"
         }
     },
-    "editor.fontFamily": "'HackJBMLigatured Nerd Font', 'Hack FC Ligatured', 'Hack', 'Source Code Pro', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
+    "editor.fontFamily": "'Material Design Icons Desktop', 'HackJBMLigatured Nerd Font', 'Hack FC Ligatured', 'Hack', 'Source Code Pro', 'Droid Sans Mono', 'monospace', monospace, 'Droid Sans Fallback'",
     "editor.fontLigatures": true,
     "editor.renderWhitespace": "boundary",
     "editor.insertSpaces": false,
