@@ -119,8 +119,9 @@
 	},
 	"network": {
 		// "interface": "wlp2*", // (Optional) To force the use of this interface
-		"format-wifi": "<big>󰤨</big>",
-		"tooltip-format-wifi": "{essid} ({signalStrength}%) 󰤨\n{ifname}: {ipaddr}/{cidr}\n{bandwidthDownBits} 󰇚 / {bandwidthUpBits} 󰕒",
+		"format-wifi": "<big>{icon}</big>",
+		"format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+		"tooltip-format-wifi": "{essid} ({signalStrength}%) {icon}\n{ifname}: {ipaddr}/{cidr}\n{bandwidthDownBits} 󰇚 / {bandwidthUpBits} 󰕒",
 		"format-ethernet": "<big>󰈀</big>",
 		"tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr} 󰈀\n{bandwidthDownBits} 󰇚 / {bandwidthUpBits} 󰕒",
 		"format-linked": "<big>󰈀</big>",
