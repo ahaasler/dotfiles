@@ -56,8 +56,8 @@
 	"idle_inhibitor": {
 		"format": "{icon}",
 		"format-icons": {
-			"activated": "<big></big>",
-			"deactivated": "<big>﯏</big>"
+			"activated": "<big>󰈈</big>",
+			"deactivated": "<big>󰛑</big>"
 		}
 	},
 	"tray": {
@@ -74,7 +74,7 @@
 			"critical": 70,
 			"warning": 50
 		},
-		"format": "<big>﬙</big>"
+		"format": "<big>󰘚</big>"
 	},
 	"memory": {
 		"states": {
@@ -82,7 +82,7 @@
 			"critical": 90,
 			"warning" : 70
 		},
-		"format": "<big></big>",
+		"format": "<big>󰍛</big>",
 		"tooltip-format": "{percentage}% - {used:0.1f}G/{total:0.1f}G"
 	},
 	"temperature": {
@@ -109,9 +109,9 @@
 		"format": "<big>{icon}</big>",
 		"format-danger": "{capacity}% <big>{icon}</big>",
 		"format-charging": "<big></big>",
-		"format-plugged": "<big>ﮣ</big>",
+		"format-plugged": "<big>󰚥</big>",
 		"format-alt": "{capacity}% <big>{icon}</big>",
-		"format-icons": ["", "", "", "", "", "", "", "", "", "", ""],
+		"format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
 		"tooltip-format": "{capacity}% - {timeTo}"
 	},
 	"battery#bat2": {
@@ -119,16 +119,16 @@
 	},
 	"network": {
 		// "interface": "wlp2*", // (Optional) To force the use of this interface
-		"format-wifi": "<big>直</big>",
-		"tooltip-format-wifi": "{essid} ({signalStrength}%) 直\n{ifname}: {ipaddr}/{cidr}\n{bandwidthDownBits}  / {bandwidthUpBits} 祝",
-		"format-ethernet": "<big></big>",
-		"tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr} \n{bandwidthDownBits}  / {bandwidthUpBits} 祝",
-		"format-linked": "<big></big>",
-		"tooltip-format-linked": "{ifname} (No IP) ",
-		"format-disabled": "<big>睊</big>",
-		"tooltip-format-disabled": "Disabled ",
-		"format-disconnected": "<big>睊</big>",
-		"tooltip-format-disconnected": "Disconnected ",
+		"format-wifi": "<big>󰤨</big>",
+		"tooltip-format-wifi": "{essid} ({signalStrength}%) 󰤨\n{ifname}: {ipaddr}/{cidr}\n{bandwidthDownBits} 󰇚 / {bandwidthUpBits} 󰕒",
+		"format-ethernet": "<big>󰈀</big>",
+		"tooltip-format-ethernet": "{ifname}: {ipaddr}/{cidr} 󰈀\n{bandwidthDownBits} 󰇚 / {bandwidthUpBits} 󰕒",
+		"format-linked": "<big>󰈀</big>",
+		"tooltip-format-linked": "{ifname} (No IP) 󰈀",
+		"format-disabled": "<big>󰤮</big>",
+		"tooltip-format-disabled": "Disabled 󰲜",
+		"format-disconnected": "<big>󰤮</big>",
+		"tooltip-format-disconnected": "Disconnected 󰲜",
 		"tooltip-format": "{ifname}: {ipaddr}/{cidr}"
 	},
 	"pulseaudio": {
