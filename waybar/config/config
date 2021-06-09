@@ -65,6 +65,7 @@
 		"spacing": 10
 	},
 	"clock": {
+		"format": "{:%H:%M   <span color=\"#747474\">%F</span>}",
 		"locale": "en_GB.UTF-8",
 		"tooltip-format": "<big><big><big>{:%d %B, %Y}</big>\n\n<tt>{calendar}</tt></big></big>"
 	},
