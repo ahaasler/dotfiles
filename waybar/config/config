@@ -96,9 +96,12 @@
 		"tooltip-format": "{temperatureC}°C"
 	},
 	"backlight": {
-		// "device": "acpi_video1",
-		"format": "{percent}% {icon}",
-		"format-icons": ["", ""]
+		"format": "<big>{icon}</big>",
+		"format-icons": ["󰌶", "󰌵"],
+		"tooltip-format": "{percent}%",
+		"on-click": "[ \"$(light -G | awk '{ print int($1) }')\" -lt \"75\" ] && light -S 100 || light -S 49",
+		"on-scroll-up": "light -S $(light -G | awk '{ print ($1 <= 98) ? int($1 + 2) : 100 }')",
+		"on-scroll-down": "light -S $(light -G | awk '{ print ($1 >= 3) ? int($1 - 2) : 1 }')"
 	},
 	"battery": {
 		"states": {
