@@ -122,7 +122,7 @@ window#waybar.left > box {
 }
 
 #battery.charging {
-	color: @warn;
+	color: @success;
 	animation-name: blink;
 	animation-duration: 0.5s;
 	animation-timing-function: ease-in;

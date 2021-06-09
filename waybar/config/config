@@ -109,7 +109,7 @@
 		},
 		"format": "<big>{icon}</big>",
 		"format-danger": "{capacity}% <big>{icon}</big>",
-		"format-charging": "<big></big>",
+		"format-charging": "<big>{icon}</big>",
 		"format-plugged": "<big>󰚥</big>",
 		"format-alt": "{capacity}% <big>{icon}</big>",
 		"format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
