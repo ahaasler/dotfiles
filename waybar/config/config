@@ -95,7 +95,7 @@
 		"critical-threshold": 80,
 		// "format-critical": "{temperatureC}°C {icon}",
 		"format": "<big>{icon}</big>",
-		"format-icons": ["", "", "", "", ""],
+		"format-icons": ["󱃃", "󰔏", "󱃂"],
 		"tooltip-format": "{temperatureC}°C"
 	},
 	"backlight": {
