@@ -28,30 +28,33 @@
 		"format": "<span style=\"italic\">{}</span>"
 	},
 	"mpd": {
-		"format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ",
-		"format-disconnected": "Disconnected ",
-		"format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+		"format": "<span color=\"#747474\">{artist}</span>  {title}  <span color=\"#747474\">{elapsedTime:%M:%S}/{totalTime:%M:%S}</span>",
+		"format-disconnected": "",
+		"format-stopped": "",
 		"unknown-tag": "N/A",
 		"interval": 2,
 		"consume-icons": {
-			"on": " "
+			"on": "󰐓",
+			"off": "󰗇"
 		},
 		"random-icons": {
-			"off": "<span color=\"#f53c3c\"></span> ",
-			"on": " "
+			"on": "󰒝",
+			"off": "󰒞"
 		},
 		"repeat-icons": {
-			"on": " "
+			"on": "󰑖",
+			"off": "󰑗"
 		},
 		"single-icons": {
-			"on": "1 "
+			"on": "󰨿",
+			"off": "󰩀"
 		},
 		"state-icons": {
-			"paused": "",
-			"playing": ""
+			"paused": "󰏤",
+			"playing": "󰐊"
 		},
-		"tooltip-format": "MPD (connected)",
-		"tooltip-format-disconnected": "MPD (disconnected)"
+		"tooltip-format": "{stateIcon} {title}   {consumeIcon} {randomIcon} {repeatIcon} {singleIcon}\n{artist} - {album}",
+		"tooltip-format-disconnected": ""
 	},
 	"idle_inhibitor": {
 		"format": "{icon}",
