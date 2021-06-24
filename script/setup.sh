@@ -247,34 +247,40 @@ install_dotfiles () {
 	for file in $(find -H "$base_folder" -maxdepth 3 -name '*.customlink' -not -path '*/.git.customlink' -not -path '*/.git/**' -not -path "$base_folder/if/**")
 	do
 		src="${file%.*}"
-		dst="$(expandPath $(head -n 1 $file))"
-		if [ ! -d "$(dirname $dst)" ]; then
-			mkdir -p $(dirname $dst)
-		fi
-		link_file "$src" "$dst"
+		while IFS= read -r line; do
+			dst="$(expandPath "$line")"
+			if [ ! -d "$(dirname "$dst")" ]; then
+				mkdir -p "$(dirname "$dst")"
+			fi
+			link_file "$src" "$dst"
+		done < "$file"
 	done
 
 	for file in $(find -H "$base_folder" -maxdepth 3 -name '*.customcopy' -not -path '*/.git.customcopy' -not -path '*/.git/**' -not -path "$base_folder/if/**")
 	do
 		src="${file%.*}"
-		dst="$(expandPath $(head -n 1 $file))"
-		if [ ! -d "$(dirname $dst)" ]; then
-			mkdir -p $(dirname $dst)
-		fi
-		copy_file "$src" "$dst"
+		while IFS= read -r line; do
+			dst="$(expandPath "$line")"
+			if [ ! -d "$(dirname "$dst")" ]; then
+				mkdir -p "$(dirname "$dst")"
+			fi
+			copy_file "$src" "$dst"
+		done < "$file"
 	done
 
 	for folder in $(find -H "$base_folder" -maxdepth 3 -name '*.contentlink' -not -path '*/.git.contentlink' -not -path '*/.git/**' -not -path "$base_folder/if/**")
 	do
 		src="${folder%.*}"
-		dst="$(expandPath $(head -n 1 $folder))"
-		if [ ! -d "$dst" ]; then
-			mkdir -p $dst
-		fi
-		for file in $(ls -A1 $src)
-		do
-			link_file "$src/$file" "$dst/$file"
-		done
+		while IFS= read -r line; do
+			dst="$(expandPath "$line")"
+			if [ ! -d "$dst" ]; then
+				mkdir -p "$dst"
+			fi
+			for file in $(ls -A1 "$src")
+			do
+				link_file "$src/$file" "$dst/$file"
+			done
+		done < "$folder"
 	done
 
 	for file in $(find -H "$base_folder" -maxdepth 3 -name '*.binlink' -not -path '*/.git.binlink' -not -path '*/.git/**' -not -path "$base_folder/if/**")
@@ -297,23 +303,27 @@ install_dotfiles () {
 	for file in $(find -H "$base_folder" -maxdepth 3 -name '*.rootlink' -not -path '*/.git.rootlink' -not -path '*/.git/**' -not -path "$base_folder/if/**")
 	do
 		src="${file%.*}"
-		dst="$(expandPath $(head -n 1 $file))"
-		info "root necessary to setup $dst"
-		if [ ! -d "$(dirname $dst)" ]; then
-			sudo mkdir -p $(dirname $dst)
-		fi
-		link_file "$src" "$dst" "sudo"
+		while IFS= read -r line; do
+			dst="$(expandPath "$line")"
+			info "root necessary to setup $dst"
+			if [ ! -d "$(dirname "$dst")" ]; then
+				sudo mkdir -p "$(dirname "$dst")"
+			fi
+			link_file "$src" "$dst" "sudo"
+		done < "$file"
 	done
 
 	for file in $(find -H "$base_folder" -maxdepth 3 -name '*.rootcopy' -not -path '*/.git.rootcopy' -not -path '*/.git/**' -not -path "$base_folder/if/**")
 	do
 		src="${file%.*}"
-		dst="$(expandPath $(head -n 1 $file))"
-		info "root necessary to setup $dst"
-		if [ ! -d "$(dirname $dst)" ]; then
-			sudo mkdir -p $(dirname $dst)
-		fi
-		copy_file "$src" "$dst" "sudo"
+		while IFS= read -r line; do
+			dst="$(expandPath "$line")"
+			info "root necessary to setup $dst"
+			if [ ! -d "$(dirname "$dst")" ]; then
+				sudo mkdir -p "$(dirname "$dst")"
+			fi
+			copy_file "$src" "$dst" "sudo"
+		done < "$file"
 	done
 }
 
