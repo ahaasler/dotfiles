@@ -166,3 +166,7 @@
 	path = ulauncher/extensions/tmux
 	url = https://github.com/ahaasler/ulauncher-tmux.git
 	branch = main
+[submodule "node/asdf-plugin"]
+	path = node/asdf-plugin
+	url = https://github.com/asdf-vm/asdf-nodejs.git
+	branch = master
