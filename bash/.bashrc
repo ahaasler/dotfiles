@@ -18,7 +18,7 @@ if [ -f /usr/share/powerline/bindings/bash/powerline.sh ]; then
 	source /usr/share/powerline/bindings/bash/powerline.sh
 fi
 
-source_dotfiles_pattern '*.bash'
+source_dotfiles_pattern '*.bash' '' '**/asdf-plugin/**'
 # Source distro specific bash config
 if [ "$DISTRO" ] && [ -d "$DOTFILES_HOME/if/distro/$DISTRO" ]; then
 	source_dotfiles_pattern '*.bash' "if/distro/$DISTRO/"
