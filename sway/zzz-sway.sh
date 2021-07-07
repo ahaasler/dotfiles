@@ -17,5 +17,6 @@ if [[ "$(tty)" == '/dev/tty1' ]]; then
 	export POWERLINE_CONFIG_OVERRIDES=""
 	export XDG_CURRENT_DESKTOP=sway
 	export MOZ_ENABLE_WAYLAND=1
+	export WLR_NO_HARDWARE_CURSORS=1
 	exec sway 2> /tmp/sway.log
 fi
