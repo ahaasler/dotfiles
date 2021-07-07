@@ -1,6 +1,6 @@
 # Laptop display
-output eDP-1 resolution 1920x1080 position 0,1080
-# Second monitor over the laptop
+output eDP-1 resolution 1920x1080 position 1920,0
+# Second monitor on the left
 output HDMI-A-1 resolution 1920x1080 position 0,0
 
 # Spanish keyboard layout
