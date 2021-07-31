@@ -8,7 +8,7 @@
 	// Choose the order of the modules
 	"modules-left": ["sway/workspaces", "sway/mode", "custom/media", "sway/window"],
 	"modules-center": ["clock"],
-	"modules-right": ["mpd", "idle_inhibitor", "pulseaudio", "cpu", "memory", "temperature", "backlight", "network", "battery"],
+	"modules-right": ["mpd", "idle_inhibitor", "pulseaudio#sink", "pulseaudio#source", "cpu", "memory", "temperature", "backlight", "network", "battery"],
 	// Modules configuration
 	"sway/workspaces": {
 		"disable-scroll": true,
@@ -139,24 +139,41 @@
 		"tooltip-format-disconnected": "Disconnected 󰲜",
 		"tooltip-format": "{ifname}: {ipaddr}/{cidr}"
 	},
-	"pulseaudio": {
+	"pulseaudio#sink": {
 		// "scroll-step": 1, // %, can be a float
-		"format": "{volume}% {icon} {format_source}",
-		"format-bluetooth": "{volume}% {icon} {format_source}",
-		"format-bluetooth-muted": " {icon} {format_source}",
-		"format-muted": " {format_source}",
-		"format-source": "{volume}% ",
-		"format-source-muted": "",
+		"format": "<big>{icon}</big>",
+		"format-bluetooth": "{icon}",
+		"format-bluetooth-muted": "{icon}",
+		"format-muted": "<big>󰖁</big>",
+		"format-source": "{volume}% 󰍬",
+		"format-source-muted": "󰍭",
 		"format-icons": {
-			"headphones": "",
-			"handsfree": "",
-			"headset": "",
-			"phone": "",
-			"portable": "",
-			"car": "",
-			"default": ["", "", ""]
+			"headphone": "󰋋",
+			"hands-free": "󰄋",
+			"headset": "󰋎",
+			"phone": "󰥒",
+			"portable": "󰥒",
+			"car": "󰄋",
+			"default": ["󰕿", "󰖀", "󰕾"],
 		},
-		"on-click": "pavucontrol"
+		"states": {
+			"silence": 0,
+			"low": 1,
+			"medium": 33,
+			"high": 66,
+			"warning": 101,
+			"critical": 116,
+			"danger": 131
+		},
+		"on-click": "amixer set Master toggle",
+		"tooltip-format": "{volume}% {icon} - {format_source}\n{desc}"
+	},
+	"pulseaudio#source": {
+		"format": "{format_source}",
+		"format-source": "<big>󰍬</big>",
+		"format-source-muted": "<big>󰍭</big>",
+		"on-click": "amixer set Capture toggle",
+		"tooltip": false
 	},
 	"custom/media": {
 		"format": "{icon} {}",

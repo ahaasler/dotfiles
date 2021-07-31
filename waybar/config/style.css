@@ -137,7 +137,20 @@ window#waybar.left > box {
 	color: @secondary;
 }
 
-#pulseaudio.muted {
+#pulseaudio.sink.bluetooth {
+	color: @accent;
+}
+
+#pulseaudio.sink.sink-muted,
+#pulseaudio.sink.silence {
+	color: @secondary;
+}
+
+#pulseaudio.source {
+	margin-right: -3px;
+}
+
+#pulseaudio.source.source-muted {
 	color: @secondary;
 }
 
