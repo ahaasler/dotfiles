@@ -8,7 +8,7 @@
 	// Choose the order of the modules
 	"modules-left": ["sway/workspaces", "sway/mode", "custom/media", "sway/window"],
 	"modules-center": ["clock"],
-	"modules-right": ["mpd", "idle_inhibitor", "pulseaudio", "cpu", "memory", "temperature", "backlight", "network", "battery", "battery#bat2", "tray"],
+	"modules-right": ["mpd", "idle_inhibitor", "pulseaudio", "cpu", "memory", "temperature", "backlight", "network", "battery"],
 	// Modules configuration
 	"sway/workspaces": {
 		"disable-scroll": true,
