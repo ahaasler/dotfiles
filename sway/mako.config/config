@@ -3,29 +3,35 @@ markup=1
 actions=1
 
 # Format
+anchor=top-center
 font=Arimo 13
-padding=20
-border-color=#bdbdbd
-border-size=1
-border-radius=25
-background-color=#ffffff
-text-color=#212121
+padding=15
+margin=20
+border-color=#ffffff1e
+border-size=2
+border-radius=10
+background-color=#1e1e1e
+text-color=#ffffffde
 height=200
 width=420
-format=%s <span color="#757575">(%a)</span>\n<span color="#757575">%b</span>
+format=<b>%s</b> <span color="#747474">(%a)</span>\n<span color="#747474"><b>%b</b></span>
 
 # Icons
 icons=1
 icon-path=/usr/share/icons/Adwaita
 
 [urgency=low actionable]
-text-color=#e8f5e9
+text-color=#81c995
+border-color=#81c995
 
 [urgency=normal actionable]
-background-color=#e3f2fd
+text-color=#8ab4f8
+border-color=#8ab4f8
 
 [urgency=high]
-background-color=#ffebee
+text-color=#f28b82
+border-color=#f28b82
 
 [urgency=high actionable]
-text-color=#fffde7
+text-color=#fdd663
+border-color=#fdd663
