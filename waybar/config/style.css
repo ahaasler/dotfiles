@@ -32,11 +32,16 @@ window#waybar {
 	color: @text;
 }
 
-window#waybar > box {
+window#waybar > box,
+tooltip {
 	background-color: @background;
 	border-radius: 10px;
 	box-shadow: 0 0 2px @unfocused_borders;
 	margin: 10px 10px 2px 10px;
+}
+
+tooltip * {
+	padding: 5px;
 }
 
 window#waybar.right > box {
