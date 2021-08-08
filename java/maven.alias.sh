@@ -1,4 +1,5 @@
 alias mcp='mvn clean package'
+alias mcprpn='mcp -Drpm.phase=none'
 alias mci='mvn clean install'
 alias mcin='mci -N'
 alias mdt='mvn dependency:tree'
