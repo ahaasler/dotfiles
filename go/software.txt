@@ -1,1 +1,2 @@
 golang.org/x/tools/gopls@latest
+github.com/lintingzhen/commitizen-go@latest
