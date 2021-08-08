@@ -1,0 +1,1 @@
+alias cz='commitizen-go'
