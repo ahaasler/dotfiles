@@ -95,7 +95,7 @@ jobs:
         env:
           DOTFILES_HOME: ${{ github.workspace }}
       - name: Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v0.1.8
         with:
           tag_name: ${{ needs.tag.outputs.tag }}
           body: ${{ steps.changelog.outputs.changelog }}
