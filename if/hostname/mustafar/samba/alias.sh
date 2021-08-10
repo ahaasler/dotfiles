@@ -1,0 +1,6 @@
+alias mntmars='sudo systemctl start mnt-phobos.mount mnt-deimos.mount'
+alias umntmars='sudo systemctl stop mnt-phobos.mount mnt-deimos.mount'
+alias mntint='sudo systemctl start mnt-intercambio.mount'
+alias umntint='sudo systemctl stop mnt-intercambio.mount'
+alias mntriv='sudo systemctl start mnt-rivendel.mount'
+alias umntriv='sudo systemctl stop mnt-rivendel.mount'
