@@ -1,5 +1,5 @@
 # Dropdown display
-set $dropdownDisplay eDP-1
+set $dropdownDisplay up
 
 # Wallpaper
 set $wallpaper ~/.dotfiles.home/wallpaper/lukes-view.png
