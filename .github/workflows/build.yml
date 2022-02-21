@@ -85,7 +85,7 @@ jobs:
           submodules: recursive
       - name: Generate changelog
         id: changelog
-        uses: nuuday/github-changelog-action@master
+        uses: nuuday/github-changelog-action@912f44f28161a03811360beb83ec649d236e826f
         with:
           tag: ${{ needs.tag.outputs.tag }}
           config_dir: script/ci/.release-notes
