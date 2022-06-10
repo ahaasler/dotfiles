@@ -174,3 +174,7 @@
 	path = go/asdf-task-plugin
 	url = https://github.com/particledecay/asdf-task.git
 	branch = master
+[submodule "c/asdf-protoc-plugin"]
+	path = c/asdf-protoc-plugin
+	url = https://github.com/paxosglobal/asdf-protoc.git
+	branch = master
