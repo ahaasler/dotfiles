@@ -1,2 +1,3 @@
 export NODE_PACKAGE_MANAGER=pnpm
-export PATH=$HOME/.npm-global/bin:$PATH
+export PNPM_HOME=$HOME/.local/share/pnpm
+export PATH=$PNPM_HOME:$HOME/.npm-global/bin:$PATH
