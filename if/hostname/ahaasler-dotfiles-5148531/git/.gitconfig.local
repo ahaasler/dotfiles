@@ -1,5 +1,5 @@
 [user]
-	signingkey = dev@adrianhaasler.com
+	signingkey = dev@ahaasler.com
 [commit]
 	gpgsign = true
 [tag]
